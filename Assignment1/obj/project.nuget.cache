@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YOOkxRBjgGuxUYrb3kYFr6soMuWUZrB3Pc89JRekNbl6ydtX2nEATpdHCVP7HaT2Mn47YITeHsf2b2tmkdIPJA==",
+  "dgSpecHash": "sCuRnOqWcpNSFYsAM9doKE/qqUx3NcP3oSl5CRbN+KkFMWQVY3qzR0kZUof+sSkkkHFJZfXQaZ/Z7tiRWEM85w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1\\Assignment1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alexm\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512"
+  ],
   "logs": []
 }

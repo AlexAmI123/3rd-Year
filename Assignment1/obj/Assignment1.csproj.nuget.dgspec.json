@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1.csproj": {}
+    "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1\\Assignment1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1.csproj": {
+    "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1\\Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1.csproj",
+        "projectUniqueName": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1\\Assignment1.csproj",
         "projectName": "Assignment1",
-        "projectPath": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1.csproj",
+        "projectPath": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1\\Assignment1.csproj",
         "packagesPath": "C:\\Users\\alexm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\obj\\",
+        "outputPath": "C:\\Users\\alexm\\Desktop\\School\\CS264\\Assignment1\\Assignment1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexm\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.46, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
