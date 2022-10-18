@@ -8,4 +8,5 @@
 -path M150_0_L75_200_L225_200_Z lime black 5
 -delete 5
 -editZ 4 1
+-update circle 2 50 60 60
 -exit
