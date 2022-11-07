@@ -4,12 +4,6 @@ public class Caretaker
     List<Memento> history = new List<Memento>();
     //When something is undone, add to this list
     List<Memento> redoList = new List<Memento>();
-    private Originator originator = null;
-
-    // public Caretaker(Originator originator)
-    // {
-    //     this.originator = originator;
-    // }
 
     //add memento to history
     public void addMemento(Memento shape)
@@ -40,6 +34,14 @@ public class Caretaker
     }
     public void printMemento()
     {
+        //clear console to make it look cleaner
+        Console.Clear();
+
+        //print contents of canvas so far
+        Console.WriteLine(@"
+                                                        THIS IS YOUR SVG PREVIEW :)");
+        Console.WriteLine();
+
         for (int i = 0; i < history.Count(); i++)
         {
             Console.WriteLine($"{history[i].ToString()}");

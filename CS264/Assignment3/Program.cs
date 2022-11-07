@@ -11,6 +11,7 @@ namespace Program
 {
     class assignment3
     {
+        public static Caretaker caretaker = new Caretaker();
         public static void Main(String[]args)
         {
             //Declaring all variables
@@ -24,7 +25,8 @@ namespace Program
             //canvas.Add("<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">");
             //Originator originator = new Originator("<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">");
             //Caretaker caretaker = new Caretaker(originator);
-            Caretaker caretaker = new Caretaker();
+
+            // public Caretaker caretaker = new Caretaker();
             Memento canvasSize = new Memento("<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">");
             caretaker.addMemento(canvasSize);
 
@@ -32,17 +34,6 @@ namespace Program
             //Getting input in a do while loop
             do
             {
-                //clear console to make it look cleaner
-                Console.Clear();
-                
-                //print contents of canvas so far
-                Console.WriteLine(@"
-                                                        THIS IS YOUR SVG PREVIEW :)");
-                Console.WriteLine();
-                // foreach(string s in canvas)
-                // {
-                //     Console.WriteLine(s);
-                // }
                 caretaker.printMemento();
                 Console.WriteLine("</svg>");
 
@@ -134,7 +125,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Rectangle cs = new Rectangle(x,y,width,height,fill,stroke,strokeWidth);
                             //canvas.Add(cs.printShape());
-                            cs.printShape();
+                            cs.printShape(caretaker);
                             break;
                         case "-circle":
                             //assigning values
@@ -179,7 +170,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Circle cs1 = new Circle(cx,cy,r,fill,stroke,strokeWidth);
                             // canvas.Add(cs1.printShape());
-                            cs1.printShape();
+                            cs1.printShape(caretaker);
                             break;
                         case "-ellipse":
                             //assigning values
@@ -226,7 +217,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Ellipse cs2 = new Ellipse(rx,ry,cx,cy,fill,stroke,strokeWidth);
                             //canvas.Add(cs2.printShape());
-                            cs2.printShape();
+                            cs2.printShape(caretaker);
                             break;
                         case "-line":
                             //assigning values
@@ -265,7 +256,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Line cs3 = new Line(x1,y1,x2,y2,stroke,strokeWidth);
                             //canvas.Add(cs3.printShape());
-                            cs3.printShape();
+                            cs3.printShape(caretaker);
                             break;
                         case "-polyline":
                             //assigning values
@@ -298,7 +289,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Polyline cs4 = new Polyline(coords,fill,stroke,strokeWidth);
                             //canvas.Add(cs4.printShape());
-                            cs4.printShape();
+                            cs4.printShape(caretaker);
                             break;
                         case "-polygon":
                             //assigning values
@@ -331,7 +322,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Polygon cs5 = new Polygon(coords,fill,stroke,strokeWidth);
                             //canvas.Add(cs5.printShape());
-                            cs5.printShape();
+                            cs5.printShape(caretaker);
                             break;
                         case "-path":
                             //assigning values
@@ -364,7 +355,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Path cs6 = new Path(coords,fill,stroke,strokeWidth);
                             //canvas.Add(cs6.printShape());
-                            cs6.printShape();
+                            cs6.printShape(caretaker);
                             break;
                         case "-editZ":
                             //assigning values

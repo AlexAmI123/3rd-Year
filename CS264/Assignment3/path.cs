@@ -17,11 +17,10 @@ public class Path
     //     return data;
     // }
 
-    public void printShape()
+    public void printShape(Caretaker caretaker)
     {
         string data = "<path d = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
         Memento memento  = new Memento(data);
-        Caretaker caretaker = new Caretaker();
         caretaker.addMemento(memento);
     }
 }

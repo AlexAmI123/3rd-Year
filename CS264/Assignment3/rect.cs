@@ -23,11 +23,10 @@ public class Rectangle
     //     return data;
     // }
 
-    public void printShape()
+    public void printShape(Caretaker caretaker)
     {
         string data = "<rect x = \""+ x +"\" y = \""+ y+"\" width = \""+width+"\" height = \""+ height +"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
         Memento memento  = new Memento(data);
-        Caretaker caretaker = new Caretaker();
         caretaker.addMemento(memento);
     }
 }

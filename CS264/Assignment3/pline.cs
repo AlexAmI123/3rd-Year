@@ -17,11 +17,10 @@ public class Polyline
     //     return data;
     // }
 
-    public void printShape()
+    public void printShape(Caretaker caretaker)
     {
         string data = "<polyline points = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
         Memento memento  = new Memento(data);
-        Caretaker caretaker = new Caretaker();
         caretaker.addMemento(memento);
     }
 }

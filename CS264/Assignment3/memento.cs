@@ -12,4 +12,8 @@ public class Memento
     {
         return $"{this.shape}";
     }
+    public override string ToString()
+    {
+        return $"{this.shape}";
+    }
 }
