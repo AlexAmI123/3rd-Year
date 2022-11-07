@@ -1,6 +1,6 @@
 ﻿/*
 Author: Alex Majka 20429324
-System: Windows 11, VSCode 1.72.2
+System: Windows 11, VSCode 1.73.0
 Version 1.0.0
 */
 
