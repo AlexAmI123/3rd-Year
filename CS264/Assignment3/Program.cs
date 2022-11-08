@@ -52,9 +52,9 @@ namespace Program
                 -exit                                                          Will stop taking input and export to .SVG file.
 
                                                         ALL STYLING INPUTS ARE OPTIONAL, IF NOT USED, THE DEFAULTS ARE GREY, BLACK AND 5.
-                                                                Also to add a random sized & placed shape, do -<shape command> r
-                                                                This command works for all except path, polygon and polyline.
-                                                                E.g -rectangle r
+                                                        Also to add a random sized & placed shape, do -<shape command> r e.g
+                                                        Random size command works for all shapes except path, polygon and polyline.
+                                                        E.g -rectangle r
                 ");
 
 
