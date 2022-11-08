@@ -1,0 +1,6 @@
+@startuml
+class assignment3 {
+    + {static} Main(args:String[]) : void
+}
+assignment3 o-> "caretaker" Caretaker
+@enduml

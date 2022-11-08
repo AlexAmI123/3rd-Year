@@ -1,0 +1,5 @@
+@startuml
+class Tabconv {
+    + Tabconv(inputFile:string, outputFile:string, v:bool, i:bool, o:bool, h:bool, l:bool)
+}
+@enduml

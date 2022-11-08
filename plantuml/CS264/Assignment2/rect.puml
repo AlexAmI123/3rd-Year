@@ -1,0 +1,13 @@
+@startuml
+class Rectangle {
+    + x : int
+    + y : int
+    + width : int
+    + height : int
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Rectangle(x:int, y:int, width:int, height:int, fill:string, stroke:string, strokeWidth:string)
+    + printShape() : string
+}
+@enduml

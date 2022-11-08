@@ -1,0 +1,13 @@
+@startuml
+class Ellipse {
+    + rx : int
+    + ry : int
+    + cx : int
+    + cy : int
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Ellipse(rx:int, ry:int, cx:int, cy:int, fill:string, stroke:string, strokeWidth:string)
+    + printShape(caretaker:Caretaker) : void
+}
+@enduml

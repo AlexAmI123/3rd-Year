@@ -1,0 +1,14 @@
+@startuml
+class Caretaker {
+    + addMemento(shape:Memento) : void
+    + undo() : void
+    + redo() : void
+    + getMemento(i:int) : string
+    + printMemento() : void
+    + CreateMomentoSVG() : void
+}
+class "List`1"<T> {
+}
+Caretaker o-> "history<Memento>" "List`1"
+Caretaker o-> "redoList<Memento>" "List`1"
+@enduml

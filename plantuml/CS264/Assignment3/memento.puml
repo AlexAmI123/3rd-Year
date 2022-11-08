@@ -1,0 +1,8 @@
+@startuml
+class Memento {
+    shape : string = ""
+    + Memento(shape:string)
+    + getData() : string
+    + <<override>> ToString() : string
+}
+@enduml

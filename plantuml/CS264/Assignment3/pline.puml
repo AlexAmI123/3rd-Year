@@ -1,0 +1,10 @@
+@startuml
+class Polyline {
+    + coords : string
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Polyline(coords:string, fill:string, stroke:string, strokeWidth:string)
+    + printShape(caretaker:Caretaker) : void
+}
+@enduml

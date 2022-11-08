@@ -1,0 +1,5 @@
+@startuml
+class assignment1 {
+    + {static} Main(args:String[]) : void
+}
+@enduml
