@@ -32,6 +32,7 @@ public class Caretaker
         Console.WriteLine(s);
         return s;
     }
+    //momento preview
     public void printMemento()
     {
         //clear console to make it look cleaner
@@ -45,6 +46,17 @@ public class Caretaker
         for (int i = 0; i < history.Count(); i++)
         {
             Console.WriteLine($"{history[i].ToString()}");
+        }
+    }
+    //create momento file
+    public void CreateMomentoSVG()
+    {
+        using (StreamWriter sw = File.CreateText(@"output.svg"))
+        {
+            for (int i = 0; i < history.Count(); i++)
+            {
+                sw.WriteLine($"{history[i].ToString()}");
+            }
         }
     }
 }

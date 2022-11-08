@@ -47,12 +47,6 @@ namespace Program
                 -polyline x,y_x1,y1...xn_yn fill stroke stroke-width           will add a polyline to the canvas.   !USE UNDERSCORES!
                 -polygon x,y_x1,y1...xn_yn fill stroke stroke-width            will add a polygon to the canvas.    !USE UNDERSCORES!
                 -path mx1,y1_...xn_yn fill stroke stroke-width                 will add a path to the canvas.       !USE UNDERSCORES!
-                -editZ z n                                                     will edit the z value of nth shape added, z is desired z value.
-                -delete n                                                      will delete the nth shape, if you want to delete random, type r instead of n.
-                -update shape n xyz                                            will update shape of given type, the shape is the nth shape input
-                                                                               add parameters for corresponding shape you wish to have.
-                                                                               If the z indexes before n were changed, this will affect the n value.
-                                                                               It is the same as the Z index.
                 -undo                                                          Will undo to the previous state.
                 -redo                                                          Will redo the last step that was undone.
                 -exit                                                          Will stop taking input and export to .SVG file.
@@ -352,36 +346,11 @@ namespace Program
                             //canvas.Add(cs6.printShape());
                             cs6.printShape(caretaker);
                             break;
-                        case "-editZ":
-                            //assigning values
-                            z = int.Parse(cmdCont[1]);
-                            n = int.Parse(cmdCont[2]);
-                            //editing shape z index and adding it to canvas
-                            //make temp string
-                            string temp = canvas.ElementAt(n);
-                            //removing the temp string
-                            canvas.RemoveAt(n);
-                            //adding temp string at desired z index
-                            canvas.Insert(z,temp);
-                            break;
-                        case "-delete":
-                            //if deleting random, get random and removeat
-                            if(cmdCont[1] == "r")
-                            {
-                                Random rd = new Random();
-                                n = rd.Next(1,canvas.Count);
-                                canvas.RemoveAt(n);
-                            }
-                            //else remove at n
-                            else
-                            {
-                                n = int.Parse(cmdCont[1]);
-                                canvas.RemoveAt(n);
-                            }
-                            break;
                         case "-undo":
+                            caretaker.undo();
                             break;
                         case "-redo":
+                            caretaker.redo();
                             break; 
                         case "-exit":
                             exit = true;break;
@@ -393,7 +362,7 @@ namespace Program
             caretaker.addMemento(canvasEnd);
 
             //create output file
-            CreateSVG cf = new CreateSVG(canvas);
+            caretaker.CreateMomentoSVG();
         }
     }
 }
