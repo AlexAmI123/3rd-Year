@@ -15,12 +15,7 @@ public class Line
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
     }
-    // public string printShape()
-    // {
-    //     string data = "<line x1 = \""+x1+"\" y1 = \""+y1+"\" x2 = \""+x2+"\" y2 = \""+y2+"\" style = \"stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-    //     return data;
-    // }
-
+    //add said shape to Memento
     public void printShape(Caretaker caretaker)
     {
         string data = "<line x1 = \""+x1+"\" y1 = \""+y1+"\" x2 = \""+x2+"\" y2 = \""+y2+"\" style = \"stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";

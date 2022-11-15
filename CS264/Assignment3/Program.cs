@@ -16,7 +16,6 @@ namespace Program
         {
             //Declaring all variables
             List<string> canvas = new List<string>();
-            //List<string> cmdLog = new List<string>();
             string cmdLine,coords,fill,stroke,strokeWidth;
             int x,y,width,height,r,cx,cy,rx,ry,x1,y1,x2,y2,z,n;
             bool exit = false;
@@ -29,6 +28,7 @@ namespace Program
             //Getting input in a do while loop
             do
             {
+                //printing the svg/Memento preview
                 caretaker.printMemento();
                 Console.WriteLine("</svg>");
 

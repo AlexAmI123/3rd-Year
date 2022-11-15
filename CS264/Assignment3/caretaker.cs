@@ -2,7 +2,7 @@ public class Caretaker
 {
     //Mementos for history and redo list
     List<Memento> history = new List<Memento>();
-    //When something is undone, add to this list
+    //When something is undone, add to this list of undone things
     List<Memento> redoList = new List<Memento>();
 
     //add memento to history
@@ -26,13 +26,7 @@ public class Caretaker
         history.Add(temp);
         redoList.RemoveAt(i);
     }
-    public string getMemento(int i)
-    {
-        string s = history[i].ToString();//access list at index i
-        Console.WriteLine(s);
-        return s;
-    }
-    //momento preview
+    //memento preview
     public void printMemento()
     {
         //clear console to make it look cleaner
@@ -48,7 +42,7 @@ public class Caretaker
             Console.WriteLine($"{history[i].ToString()}");
         }
     }
-    //create momento file
+    //create .svg file from Memento
     public void CreateMomentoSVG()
     {
         using (StreamWriter sw = File.CreateText(@"output.svg"))

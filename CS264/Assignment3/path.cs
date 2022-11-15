@@ -11,12 +11,7 @@ public class Path
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
     }
-    // public string printShape()
-    // {
-    //     string data = "<path d = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-    //     return data;
-    // }
-
+    //add said shape to Memento
     public void printShape(Caretaker caretaker)
     {
         string data = "<path d = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";

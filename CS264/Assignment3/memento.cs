@@ -8,10 +8,11 @@ public class Memento
         this.shape = shape;
     }
     //getter
-    public string getData()
-    {
-        return $"{this.shape}";
-    }
+    // public string getData()
+    // {
+    //     return $"{this.shape}";
+    // }
+    //get value of shape as string
     public override string ToString()
     {
         return $"{this.shape}";

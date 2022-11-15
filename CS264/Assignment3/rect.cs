@@ -17,12 +17,7 @@ public class Rectangle
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
     }
-    // public string printShape()
-    // {
-    //     string data = "<rect x = \""+ x +"\" y = \""+ y+"\" width = \""+width+"\" height = \""+ height +"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-    //     return data;
-    // }
-
+    //add said shape to Memento
     public void printShape(Caretaker caretaker)
     {
         string data = "<rect x = \""+ x +"\" y = \""+ y+"\" width = \""+width+"\" height = \""+ height +"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
