@@ -8,6 +8,7 @@ Version 1.0.0
 REFERENCES:
 https://www.newthinktank.com/2012/09/command-design-pattern-tutorial/
 https://refactoring.guru/design-patterns/command/csharp/example
+John Keating's week 8 demo files for Command Design pattern
 */
 
 using System;
