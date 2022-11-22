@@ -4,6 +4,12 @@ System: Windows 11, VSCode 1.73.0
 Version 1.0.0
 */
 
+/*
+REFERENCES:
+https://www.newthinktank.com/2012/09/command-design-pattern-tutorial/
+https://refactoring.guru/design-patterns/command/csharp/example
+*/
+
 using System;
 using System.Linq;
 using System.IO;
