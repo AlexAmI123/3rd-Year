@@ -1,0 +1,27 @@
+public class Commands : CommandInt
+{
+    public void add()
+    {
+        Console.WriteLine("Adding Command..");
+    }
+    public void undo()
+    {
+        Console.WriteLine("Undoing Command..");
+    }
+    public void redo()
+    {
+        Console.WriteLine("Redoing Command..");
+    }
+    public void printSVG()
+    {
+        Console.WriteLine("Printing SVG..");
+    }
+    public void CreateSVG()
+    {
+        Console.WriteLine("Creating SVG File..");
+    }
+    public override string ToString()
+    {
+        return $"{this.shape}";
+    }
+}

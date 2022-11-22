@@ -12,7 +12,7 @@ public class Polyline
         this.strokeWidth = strokeWidth;
     }
     //add said shape to Memento
-    public void printShape(/*Caretaker caretaker*/)
+    public void printShape(Canvas canvas/*Caretaker caretaker*/)
     {
         // string data = "<polyline points = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
         // Memento memento  = new Memento(data);

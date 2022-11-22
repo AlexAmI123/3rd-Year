@@ -19,6 +19,7 @@ namespace Program
     class assignment4
     {
         //public static Caretaker caretaker = new Caretaker();
+        public static Canvas canvas = new Canvas();
         public static void Main(String[]args)
         {
             //Declaring all variables
@@ -30,13 +31,17 @@ namespace Program
             //Adding starting header in the canvas list
             // Memento canvasSize = new Memento("<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">");
             // caretaker.addMemento(canvasSize);
+            String canvasSize = "<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">";
+            
+            canvas.Add(canvasSize);
 
 
             //Getting input in a do while loop
             do
             {
-                //printing the svg/Memento preview
+                //printing the svg preview
                 //caretaker.printMemento();
+                canvas.printSVG();
                 Console.WriteLine("</svg>");
 
                 //add space within the console to make it cleaner
@@ -366,10 +371,13 @@ namespace Program
             }while (exit != true);
             //ending the canvas list
             // Memento canvasEnd = new Memento("</svg>");
+            String canvasEnd = "</svg>";
             // caretaker.addMemento(canvasEnd);
+            canvas.Add(canvasEnd);
 
             //create output file
             // caretaker.CreateMomentoSVG();
+            canvas.createSVG();
         }
     }
 }

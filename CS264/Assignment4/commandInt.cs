@@ -1,4 +1,4 @@
-public abstract class Command
+public abstract class CommandInt
 {
     public abstract void add();
     public abstract void undo();
