@@ -1,15 +1,4 @@
 @startuml
-!include .\\CS264\Assignment1\Program.puml
-!include .\\CS264\Assignment1\Tabconv.puml
-!include .\\CS264\Assignment2\circ.puml
-!include .\\CS264\Assignment2\createSVG.puml
-!include .\\CS264\Assignment2\elli.puml
-!include .\\CS264\Assignment2\line.puml
-!include .\\CS264\Assignment2\path.puml
-!include .\\CS264\Assignment2\pline.puml
-!include .\\CS264\Assignment2\poly.puml
-!include .\\CS264\Assignment2\Program.puml
-!include .\\CS264\Assignment2\rect.puml
 !include .\\CS264\Assignment3\caretaker.puml
 !include .\\CS264\Assignment3\circ.puml
 !include .\\CS264\Assignment3\elli.puml
@@ -20,12 +9,6 @@
 !include .\\CS264\Assignment3\poly.puml
 !include .\\CS264\Assignment3\Program.puml
 !include .\\CS264\Assignment3\rect.puml
-!include .\\CS264\Assignment1\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
-!include .\\CS264\Assignment1\obj\Debug\net6.0\Assignment1.AssemblyInfo.puml
-!include .\\CS264\Assignment1\obj\Debug\net6.0\Assignment1.GlobalUsings.g.puml
-!include .\\CS264\Assignment2\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
-!include .\\CS264\Assignment2\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
-!include .\\CS264\Assignment2\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml
 !include .\\CS264\Assignment3\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
 !include .\\CS264\Assignment3\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
 !include .\\CS264\Assignment3\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml

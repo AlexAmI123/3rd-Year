@@ -3,7 +3,6 @@ class Caretaker {
     + addMemento(shape:Memento) : void
     + undo() : void
     + redo() : void
-    + getMemento(i:int) : string
     + printMemento() : void
     + CreateMomentoSVG() : void
 }

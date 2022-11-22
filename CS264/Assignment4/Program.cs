@@ -11,7 +11,7 @@ namespace Program
 {
     class assignment4
     {
-        public static Caretaker caretaker = new Caretaker();
+        //public static Caretaker caretaker = new Caretaker();
         public static void Main(String[]args)
         {
             //Declaring all variables
@@ -21,15 +21,15 @@ namespace Program
             bool exit = false;
 
             //Adding starting header in the canvas list
-            Memento canvasSize = new Memento("<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">");
-            caretaker.addMemento(canvasSize);
+            // Memento canvasSize = new Memento("<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">");
+            // caretaker.addMemento(canvasSize);
 
 
             //Getting input in a do while loop
             do
             {
                 //printing the svg/Memento preview
-                caretaker.printMemento();
+                //caretaker.printMemento();
                 Console.WriteLine("</svg>");
 
                 //add space within the console to make it cleaner
@@ -114,7 +114,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Rectangle cs = new Rectangle(x,y,width,height,fill,stroke,strokeWidth);
                             //canvas.Add(cs.printShape());
-                            cs.printShape(caretaker);
+                            //cs.printShape(caretaker);
                             break;
                         case "-circle":
                             //assigning values
@@ -159,7 +159,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Circle cs1 = new Circle(cx,cy,r,fill,stroke,strokeWidth);
                             // canvas.Add(cs1.printShape());
-                            cs1.printShape(caretaker);
+                            //cs1.printShape(caretaker);
                             break;
                         case "-ellipse":
                             //assigning values
@@ -206,7 +206,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Ellipse cs2 = new Ellipse(rx,ry,cx,cy,fill,stroke,strokeWidth);
                             //canvas.Add(cs2.printShape());
-                            cs2.printShape(caretaker);
+                            //cs2.printShape(caretaker);
                             break;
                         case "-line":
                             //assigning values
@@ -245,7 +245,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Line cs3 = new Line(x1,y1,x2,y2,stroke,strokeWidth);
                             //canvas.Add(cs3.printShape());
-                            cs3.printShape(caretaker);
+                            //cs3.printShape(caretaker);
                             break;
                         case "-polyline":
                             //assigning values
@@ -278,7 +278,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Polyline cs4 = new Polyline(coords,fill,stroke,strokeWidth);
                             //canvas.Add(cs4.printShape());
-                            cs4.printShape(caretaker);
+                            //cs4.printShape(caretaker);
                             break;
                         case "-polygon":
                             //assigning values
@@ -311,7 +311,7 @@ namespace Program
                             //creating shape and adding it to canvas
                             Polygon cs5 = new Polygon(coords,fill,stroke,strokeWidth);
                             //canvas.Add(cs5.printShape());
-                            cs5.printShape(caretaker);
+                            //cs5.printShape(caretaker);
                             break;
                         case "-path":
                             //assigning values
@@ -344,13 +344,13 @@ namespace Program
                             //creating shape and adding it to canvas
                             Path cs6 = new Path(coords,fill,stroke,strokeWidth);
                             //canvas.Add(cs6.printShape());
-                            cs6.printShape(caretaker);
+                            //cs6.printShape(caretaker);
                             break;
                         case "-undo":
-                            caretaker.undo();
+                            //caretaker.undo();
                             break;
                         case "-redo":
-                            caretaker.redo();
+                            //caretaker.redo();
                             break; 
                         case "-exit":
                             exit = true;break;
@@ -358,11 +358,11 @@ namespace Program
                 }
             }while (exit != true);
             //ending the canvas list
-            Memento canvasEnd = new Memento("</svg>");
-            caretaker.addMemento(canvasEnd);
+            // Memento canvasEnd = new Memento("</svg>");
+            // caretaker.addMemento(canvasEnd);
 
             //create output file
-            caretaker.CreateMomentoSVG();
+            // caretaker.CreateMomentoSVG();
         }
     }
 }

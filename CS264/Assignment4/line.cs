@@ -16,10 +16,10 @@ public class Line
         this.strokeWidth = strokeWidth;
     }
     //add said shape to Memento
-    public void printShape(Caretaker caretaker)
+    public void printShape(/*Caretaker caretaker*/)
     {
-        string data = "<line x1 = \""+x1+"\" y1 = \""+y1+"\" x2 = \""+x2+"\" y2 = \""+y2+"\" style = \"stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        Memento memento  = new Memento(data);
-        caretaker.addMemento(memento);
+        // string data = "<line x1 = \""+x1+"\" y1 = \""+y1+"\" x2 = \""+x2+"\" y2 = \""+y2+"\" style = \"stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
+        // Memento memento  = new Memento(data);
+        // caretaker.addMemento(memento);
     }
 }

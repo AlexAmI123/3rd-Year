@@ -18,10 +18,10 @@ public class Rectangle
         this.strokeWidth = strokeWidth;
     }
     //add said shape to Memento
-    public void printShape(Caretaker caretaker)
+    public void printShape(/*Caretaker caretaker*/)
     {
-        string data = "<rect x = \""+ x +"\" y = \""+ y+"\" width = \""+width+"\" height = \""+ height +"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        Memento memento  = new Memento(data);
-        caretaker.addMemento(memento);
+        // string data = "<rect x = \""+ x +"\" y = \""+ y+"\" width = \""+width+"\" height = \""+ height +"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
+        // Memento memento  = new Memento(data);
+        // caretaker.addMemento(memento);
     }
 }

@@ -17,10 +17,10 @@ public class Circle
         this.strokeWidth = strokeWidth;
     }
     //add said shape to Memento
-    public void printShape(Caretaker caretaker)
+    public void printShape(/*Caretaker caretaker*/)
     {
-        string data = "<circle cx = \"" + cx + "\" cy = \"" + cy + "\" r = \"" + r + "\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        Memento memento  = new Memento(data);
-        caretaker.addMemento(memento);
+        // string data = "<circle cx = \"" + cx + "\" cy = \"" + cy + "\" r = \"" + r + "\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
+        // Memento memento  = new Memento(data);
+        // caretaker.addMemento(memento);
     }
 }
