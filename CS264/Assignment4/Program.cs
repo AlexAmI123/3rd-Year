@@ -23,7 +23,7 @@ namespace Program
         public static void Main(String[]args)
         {
             //Declaring all variables
-            List<string> canvas = new List<string>();
+            //List<string> canvas = new List<string>();
             string cmdLine,coords,fill,stroke,strokeWidth;
             int x,y,width,height,r,cx,cy,rx,ry,x1,y1,x2,y2,z,n;
             bool exit = false;

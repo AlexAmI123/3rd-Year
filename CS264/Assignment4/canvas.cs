@@ -1,10 +1,10 @@
-//reveiver class
+//receiver class
 public class Canvas
 {
     private List<String> history = new List<String>();
     private List<String> redoList = new List<String>();
     //add method
-    public void add(String shape)
+    public void Add(String shape)
     {
         history.Add(shape);
     }
@@ -41,7 +41,7 @@ public class Canvas
         }
     }
     //create to file
-    public void CreateSVG()
+    public void createSVG()
     {
         using (StreamWriter sw = File.CreateText(@"output.svg"))
         {
