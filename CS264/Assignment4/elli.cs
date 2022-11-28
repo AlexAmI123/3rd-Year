@@ -21,8 +21,8 @@ public class Ellipse
     //add said shape to Memento
     public void printShape(/*Caretaker caretaker*/)
     {
-        // string data = "<ellipse cx=\""+cx+"\" cy = \""+cy+"\"  rx = \""+rx+"\" ry = \""+ry+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        // Memento memento  = new Memento(data);
-        // caretaker.addMemento(memento);
+        string data = "<ellipse cx=\""+cx+"\" cy = \""+cy+"\"  rx = \""+rx+"\" ry = \""+ry+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
+        Commands command = new Commands(data);
+        command.Execute();
     }
 }

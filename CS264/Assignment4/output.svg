@@ -1,6 +1,0 @@
-<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-<rect x = "957" y = "70" width = "80" height = "594" style = " fill : grey ; stroke : black ; stroke-width : 5" />
-<ellipse cx="1516" cy = "795"  rx = "893" ry = "786" style = " fill : grey ; stroke : black ; stroke-width : 5" />
-<circle cx = "1520" cy = "612" r = "598" style = " fill : grey ; stroke : black ; stroke-width : 5" />
-<line x1 = "524" y1 = "176" x2 = "1033" y2 = "1002" style = "stroke : black ; stroke-width : 5" />
-</svg>

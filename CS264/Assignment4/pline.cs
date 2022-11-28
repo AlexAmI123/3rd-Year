@@ -14,8 +14,8 @@ public class Polyline
     //add said shape to Memento
     public void printShape(/*Caretaker caretaker*/)
     {
-        // string data = "<polyline points = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        // Memento memento  = new Memento(data);
-        // caretaker.addMemento(memento);
+        string data = "<polyline points = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
+        Commands command = new Commands(data);
+        command.Execute();
     }
 }
