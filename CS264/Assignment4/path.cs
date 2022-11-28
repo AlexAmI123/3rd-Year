@@ -12,7 +12,7 @@ public class Path
         this.strokeWidth = strokeWidth;
     }
     //add said shape to Memento
-    public void printShape(Canvas canvas/*Caretaker caretaker*/)
+    public void printShape(/*Caretaker caretaker*/)
     {
         // string data = "<path d = \""+coords.Replace("_"," ")+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
         // Memento memento  = new Memento(data);

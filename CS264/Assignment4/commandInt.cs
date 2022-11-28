@@ -1,39 +1,70 @@
 public interface CommandInt
 {
-    void Add(string Shape);
+    void Execute();
     void Undo();
     void Redo();
     void PrintSVG();
     void CreateSVG();
 }
 
-public class Command: CommandInt
+public class Commands: CommandInt
 {
-    private List<String> history = new List<String>();
-    private List<String> redoList = new List<String>();
-    //add method
-    public void Add(String shape)
+    string shape;
+
+    //constructor
+    public Commands(string shape)
     {
-        history.Add(shape);
+        this.shape = shape;
+    }
+    //execute method
+    public void Execute()
+    {
+        CommandHndlr add = new CommandHndlr();
+        add.AddCMD(this);
     }
     //undo method
     public void Undo()
     {
-        int i = history.Count() - 1;
-        var temp = history[i];
-        redoList.Add(temp);
-        history.RemoveAt(i);
+        Console.WriteLine("Undoing Command..");
     }
     //redo method
     public void Redo()
     {
-        int i = redoList.Count() - 1;
-        var temp = redoList[i];
-        history.Add(temp);
-        redoList.RemoveAt(i);
+        Console.WriteLine("Redoing Command..");
     }
     //display svg preview
     public void PrintSVG()
+    {
+        Console.WriteLine("Printing SVG..");
+    }
+    //create to file
+    public void CreateSVG()
+    {
+        Console.WriteLine("Creating SVG file..");   
+    }
+    public override string ToString()
+        {
+            return $"{this.shape}";
+        }
+}
+
+public class CommandHndlr
+{
+    private List<CommandInt> history = new List<CommandInt>();
+
+    public void AddCMD(CommandInt command)
+    {
+        history.Add(command);
+    }
+    public void UndoCMD()
+    {
+        history[history.Count-1].Undo();
+    }
+    public void RedoCMD()
+    {
+        history[history.Count-1].Redo();
+    }
+    public void PrintSVGCMD()
     {
         //clear console to make it look cleaner
         Console.Clear();
@@ -48,8 +79,7 @@ public class Command: CommandInt
             Console.WriteLine($"{history[i].ToString()}");
         }
     }
-    //create to file
-    public void CreateSVG()
+    public void CreateSVGCMD()
     {
         using (StreamWriter sw = File.CreateText(@"output.svg"))
         {
