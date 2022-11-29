@@ -16,12 +16,12 @@ public class Rectangle
         this.fill = fill;
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
+        printShape();
     }
     //add said shape to Memento
-    public void printShape()
+    public string printShape()
     {
         string data = "<rect x = \""+ x +"\" y = \""+ y+"\" width = \""+width+"\" height = \""+ height +"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        Commands command = new Commands(data);
-        command.Execute();
+        return data;
     }
 }

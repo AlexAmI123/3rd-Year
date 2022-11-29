@@ -17,12 +17,12 @@ public class Ellipse
         this.fill = fill;
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
+        printShape();
     }
     //add said shape to Memento
-    public void printShape(/*Caretaker caretaker*/)
+    public string printShape(/*Caretaker caretaker*/)
     {
         string data = "<ellipse cx=\""+cx+"\" cy = \""+cy+"\"  rx = \""+rx+"\" ry = \""+ry+"\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        Commands command = new Commands(data);
-        command.Execute();
+        return data;
     }
 }

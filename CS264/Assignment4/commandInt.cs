@@ -1,10 +1,6 @@
 public interface CommandInt
 {
     void Execute();
-    void Undo();
-    void Redo();
-    void PrintSVG();
-    void CreateSVG();
 }
 
 public class Commands: CommandInt
@@ -19,8 +15,7 @@ public class Commands: CommandInt
     //execute method
     public void Execute()
     {
-        CommandHndlr add = new CommandHndlr();
-        add.AddCMD(this);
+
     }
     //undo method
     public void Undo()
@@ -43,28 +38,73 @@ public class Commands: CommandInt
         Console.WriteLine("Creating SVG file..");   
     }
     public override string ToString()
-        {
-            return $"{this.shape}";
-        }
+    {
+        return $"{this.shape}";
+    }
 }
 
-public class CommandHndlr
+public class AddCMD: CommandInt
 {
-    private List<CommandInt> history = new List<CommandInt>();
+    public List<String> history;
+    public List<String> redoList;
 
-    public void AddCMD(CommandInt command)
+    public string shape;
+
+    public AddCMD(String shape, List<string> history)
     {
-        history.Add(command);
+        this.shape = shape;
+        this.history = history;
     }
-    public void UndoCMD()
+    public void Execute()
     {
-        history[history.Count-1].Undo();
+        history.Add(shape);
     }
-    public void RedoCMD()
+}
+public class UndoCMD: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+
+    public UndoCMD(List<string> history, List<string> redoList)
     {
-        history[history.Count-1].Redo();
+        this.history = history;
+        this.redoList = redoList;
     }
-    public void PrintSVGCMD()
+    public void Execute()
+    {
+        int i = history.Count() - 1;
+        var temp = history[i];
+        redoList.Add(temp);
+        history.RemoveAt(i);
+    }
+}
+public class RedoCMD: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+
+    public RedoCMD(List<string> history, List<string> redoList)
+    {
+        this.history = history;
+        this.redoList = redoList;
+    }
+    public void Execute()
+    {
+        int i = redoList.Count() - 1;
+        var temp = redoList[i];
+        history.Add(temp);
+        redoList.RemoveAt(i);
+    }
+}
+public class PrintSVGCMD: CommandInt
+{
+    public List<String> history;
+
+    public PrintSVGCMD(List<string> history)
+    {
+        this.history = history;
+    }
+    public void Execute()
     {
         //clear console to make it look cleaner
         Console.Clear();
@@ -79,7 +119,15 @@ public class CommandHndlr
             Console.WriteLine($"{history[i].ToString()}");
         }
     }
-    public void CreateSVGCMD()
+}
+public class CreateSVGCMD: CommandInt
+{
+    public List<String> history;
+    public CreateSVGCMD(List<string> history)
+    {
+        this.history = history;
+    }
+    public void Execute()
     {
         using (StreamWriter sw = File.CreateText(@"output.svg"))
         {

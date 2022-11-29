@@ -14,12 +14,12 @@ public class Line
         this.y2 = y2;
         this.stroke = stroke;
         this.strokeWidth = strokeWidth;
+        printShape();
     }
     //add said shape to Memento
-    public void printShape(/*Caretaker caretaker*/)
+    public string printShape(/*Caretaker caretaker*/)
     {
         string data = "<line x1 = \""+x1+"\" y1 = \""+y1+"\" x2 = \""+x2+"\" y2 = \""+y2+"\" style = \"stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
-        Commands command = new Commands(data);
-        command.Execute();
+        return data;
     }
 }
