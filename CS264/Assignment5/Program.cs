@@ -1,6 +1,6 @@
 ﻿/*
 Author: Alex Majka 20429324
-System: Windows 11, VSCode 1.73.0
+System: Windows 11, VSCode 1.73.1
 Version 1.0.0
 */
 
@@ -8,7 +8,7 @@ Version 1.0.0
 REFERENCES:
 https://www.newthinktank.com/2012/09/command-design-pattern-tutorial/
 https://refactoring.guru/design-patterns/command/csharp/example
-John Keating's week 8 demo files for Command Design pattern
+John Keating's week 9 demo files for Factory Design
 */
 
 using System;
