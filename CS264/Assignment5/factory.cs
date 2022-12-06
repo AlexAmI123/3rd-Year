@@ -1,134 +1,166 @@
-sealed class Factory
+abstract class Creator
 {
-    public Shape GetShape(String Type)
+    public abstract IProduct FactoryMethod();
+
+    public string SomeOperation()
     {
-        Shape shape = null;
-        if (Type.Equals("square"))
-        {
-            shape = new SquareShape();
-        }
-        else if (Type.Equals("triangle"))
-        {
-            shape = new TriangleShape();
-        }
-        else if (Type.Equals("circle"))
-        {
-            shape = new CircleShape();
-        }
-        else if (Type.Equals("ellipse"))
-        {
-            shape = new EllipseShape();
-        }
-        else if (Type.Equals("line"))
-        {
-            shape = new LineShape();
-        }
-        else if (Type.Equals("path"))
-        {
-            shape = new PathShape();
-        }
-        else if (Type.Equals("pathline"))
-        {
-            shape = new PathlineShape();
-        }
-        else if (Type.Equals("polygon"))
-        {
-            shape = new PolygonShape();
-        }
-        return shape;
+        var product = FactoryMethod();
+        var result = "Creator: The same creator's code has just worked with "
+            + product.Operation();
+
+        return result;
     }
 }
-abstract class Shape
+abstract class ShapeCreator
 {
-    internal abstract void draw();
-    internal abstract void show();
+    public abstract IShape FactoryMethod();
+
+    public string SomeOperation()
+    {
+        // Call the factory method to create a Product object.
+        var shape = FactoryMethod();
+        // Now, use the product.
+        var result = "Creator: The same creator's code has just worked with ["
+            + shape.Operation() + "]";
+
+        return result;
+    }
+}
+class ConcreteCreator1 : Creator
+{
+    public override IProduct FactoryMethod()
+    {
+        return new ConcreteProduct1();
+    }
+}
+class ConcreteCreator2 : Creator
+{
+    public override IProduct FactoryMethod()
+    {
+        return new ConcreteProduct2();
+    }
+}
+class SquareFactory : ShapeCreator
+{
+    public override IShape FactoryMethod()
+    {
+        return new SquareShape();
+    }
 }
 
-sealed internal class SquareShape : Shape
+class TriangleFactory : ShapeCreator
 {
-    internal override void draw()
+    public override IShape FactoryMethod()
     {
-        Console.WriteLine("Square: drawing!");
-    }
-    internal override void show()
-    {
-        Console.WriteLine("Square: showing!");
+        return new TriangleShape();
     }
 }
-sealed internal class TriangleShape : Shape
+public interface IProduct
 {
-    internal override void draw()
+    string Operation();
+}
+
+public interface IShape
+{
+
+    public void draw();
+    public void show();
+    public string Operation();
+}
+class ConcreteProduct1 : IProduct
+{
+    public string Operation()
     {
-        Console.WriteLine("Triangle: drawing!");
-    }
-    internal override void show()
-    {
-        Console.WriteLine("Triangle: showing!");
+        return "{Result of ConcreteProduct1}";
     }
 }
-sealed internal class CircleShape : Shape
+class SquareShape : IShape
 {
-    internal override void draw()
+    public void draw()
     {
-        Console.WriteLine("Circle: drawing!");
+        Console.WriteLine("SQUARE: drawing!");
     }
-    internal override void show()
+    public void show()
     {
-        Console.WriteLine("Circle: showing!");
+        Console.WriteLine("SQUARE: showing!");
+    }
+    public string Operation()
+    {
+        return "SQUARE";
     }
 }
-sealed internal class EllipseShape : Shape
+class ConcreteProduct2 : IProduct
 {
-    internal override void draw()
+    public string Operation()
     {
-        Console.WriteLine("Ellipse: drawing!");
-    }
-    internal override void show()
-    {
-        Console.WriteLine("Ellipse: showing!");
+        return "{Result of ConcreteProduct2}";
     }
 }
-sealed internal class LineShape : Shape
+
+class TriangleShape : IShape
 {
-    internal override void draw()
+    public void draw()
     {
-        Console.WriteLine("Line: drawing!");
+        Console.WriteLine("TRIANGLE: drawing!");
     }
-    internal override void show()
+    public void show()
     {
-        Console.WriteLine("Line: showing!");
+        Console.WriteLine("TRIANGLE: showing!");
+    }
+    public string Operation()
+    {
+        return "TRIANGLE";
     }
 }
-sealed internal class PathShape : Shape
+
+class Client
 {
-    internal override void draw()
+    public void Main()
     {
-        Console.WriteLine("Path: drawing!");
+        Console.WriteLine("App: Launched with the ConcreteCreator1.");
+        ClientCode(new ConcreteCreator1());
+
+        Console.WriteLine();
+
+        Console.WriteLine("App: Launched with the ConcreteCreator2.");
+        ClientCode(new ConcreteCreator2());
     }
-    internal override void show()
+
+    // The client code works with an instance of a concrete creator, albeit
+    // through its base interface. As long as the client keeps working with
+    // the creator via the base interface, you can pass it any creator's
+    // subclass.
+    public void ClientCode(Creator creator)
     {
-        Console.WriteLine("Path: showing!");
+        // ...
+        Console.WriteLine("Client: I'm not aware of the creator's class," +
+            "but it still works.\n" + creator.SomeOperation());
+        // ...
     }
+
 }
-sealed internal class PathlineShape : Shape
+
+class ShapeClient
 {
-    internal override void draw()
+    public void Main()
     {
-        Console.WriteLine("Pathline: drawing!");
+        Console.WriteLine("App: Launched with SquareShape: ");
+        ClientCode(new SquareFactory());
+
+        Console.WriteLine();
+
+        Console.WriteLine("App: Launched with TriangleShape: ");
+        ClientCode(new TriangleFactory());
     }
-    internal override void show()
+
+    // The client code works with an instance of a concrete creator, albeit
+    // through its base interface. As long as the client keeps working with
+    // the creator via the base interface, you can pass it any creator's
+    // subclass.
+    public void ClientCode(ShapeCreator creator)
     {
-        Console.WriteLine("Pathline: showing!");
+        Console.WriteLine("Client: I am not aware of the creator's class, but it still works: [{0}]:"+ 
+                            Environment.NewLine,creator.SomeOperation());
     }
-}
-sealed internal class PolygonShape : Shape
-{
-    internal override void draw()
-    {
-        Console.WriteLine("Polygon: drawing!");
-    }
-    internal override void show()
-    {
-        Console.WriteLine("Polygon: showing!");
-    }
+
 }
