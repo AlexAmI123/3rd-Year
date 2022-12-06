@@ -1,0 +1,15 @@
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/bin/Debug/net5.0/MyOtherSimpleFactory.deps.json
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/bin/Debug/net5.0/MyOtherSimpleFactory.runtimeconfig.json
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/bin/Debug/net5.0/MyOtherSimpleFactory.runtimeconfig.dev.json
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/bin/Debug/net5.0/MyOtherSimpleFactory.dll
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/bin/Debug/net5.0/ref/MyOtherSimpleFactory.dll
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/bin/Debug/net5.0/MyOtherSimpleFactory.pdb
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.csprojAssemblyReference.cache
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.AssemblyInfoInputs.cache
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.AssemblyInfo.cs
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.csproj.CoreCompileInputs.cache
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.dll
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/ref/MyOtherSimpleFactory.dll
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.pdb
+/Users/jgkeating/Courses/CS264-2021/CS264 Demos/CS264-W09/MyOtherSimpleFactory/obj/Debug/net5.0/MyOtherSimpleFactory.genruntimeconfig.cache

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/jgkeating/.dotnet/store/|arch|/|tfm|",
+      "/Users/jgkeating/.nuget/packages"
+    ]
+  }
+}
