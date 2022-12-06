@@ -1,0 +1,9 @@
+@startuml
+class assignment4 {
+    + {static} Main(args:String[]) : void
+}
+class "List`1"<T> {
+}
+assignment4 o-> "canvas<string>" "List`1"
+assignment4 o-> "redoList<string>" "List`1"
+@enduml
