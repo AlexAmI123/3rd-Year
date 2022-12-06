@@ -1,0 +1,15 @@
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\bin\Debug\net6.0\Assignment5.exe
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\bin\Debug\net6.0\Assignment5.deps.json
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\bin\Debug\net6.0\Assignment5.runtimeconfig.json
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\bin\Debug\net6.0\Assignment5.dll
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\bin\Debug\net6.0\Assignment5.pdb
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.csproj.AssemblyReference.cache
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.AssemblyInfoInputs.cache
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.AssemblyInfo.cs
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.csproj.CoreCompileInputs.cache
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.dll
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\refint\Assignment5.dll
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.pdb
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\Assignment5.genruntimeconfig.cache
+C:\Users\alexm\Desktop\School\3rd-Year\CS264\Assignment5\obj\Debug\net6.0\ref\Assignment5.dll
