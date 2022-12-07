@@ -1,6 +1,7 @@
+//Using Factory Method
 class Factory
 {
-    public void GenerateShape(string[] cmdCont,List<string> canvas, List<string> redoList,bool exit)
+    public void GenerateShape(string[] cmdCont,List<string> canvas, List<string> redoList/*bool exit*/)
     {
         int x,y,width,height,r,cx,cy,rx,ry,x1,y1,x2,y2,z,n;
         string cmdLine,coords,fill,stroke,strokeWidth;
@@ -292,8 +293,8 @@ class Factory
                 RedoCMD redo = new RedoCMD(canvas, redoList);
                 redo.Execute();
                 break; 
-            case "-exit":
-                exit = true;break;
+            // case "-exit":
+            //     exit = true;break;
         }
     }
 }

@@ -2,6 +2,9 @@
 Author: Alex Majka 20429324
 System: Windows 11, VSCode 1.73.1
 Version 1.0.0
+
+
+METHOD USED: FACTORY METHOD
 */
 
 /*
@@ -29,7 +32,6 @@ namespace Program
             //List<string> canvas = new List<string>();
             string cmdLine,coords,fill,stroke,strokeWidth;
             int x,y,width,height,r,cx,cy,rx,ry,x1,y1,x2,y2,z,n;
-            bool exit = false;
 
             //Adding starting header in the canvas list
             String canvasSize = "<svg viewBox=\"0 0 1920 1080\" xmlns=\"http://www.w3.org/2000/svg\">";
@@ -77,10 +79,18 @@ namespace Program
 
                 //initiate factory and generate shape
                 Factory factory = new Factory();
-                factory.GenerateShape(cmdCont,canvas,redoList,exit);
-
+                if(cmdCont[0]!= "-exit")
+                {
+                    factory.GenerateShape(cmdCont,canvas,redoList);
+                }
+                else
+                {
+                    exit = true;
+                }
+                // Factory factory = new Factory();
+                // factory.GenerateShape(cmdCont,canvas,redoList),exit;
             }while (exit != true);
-            
+
             //ending the canvas list
             String canvasEnd = "</svg>";
             AddCMD addEnd = new AddCMD(canvasEnd, canvas);
