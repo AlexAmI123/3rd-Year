@@ -2,15 +2,20 @@
 Author: Alex Majka 20429324
 System: Windows 11, VSCode 1.72.2
 Version 1.0.0
-*/
 
+
+METHOD USED: FACTORY METHOD
+THIS IS ASSIGNMENT 2 EDITED AS ASSIGNMENT 5 (COMMAND PATTERN)
+*/
 
 /*
-PLAN:
-1. Get user input in a loop
-2. put input into a string
-3. using a library make that string into a svg file Perhaps ASPOSE?
+REFERENCES:
+https://www.newthinktank.com/2012/09/command-design-pattern-tutorial/
+https://refactoring.guru/design-patterns/command/csharp/example
+John Keating's week 9 demo files for Factory Design
 */
+
+
 using System;
 using System.IO;
 namespace Program
