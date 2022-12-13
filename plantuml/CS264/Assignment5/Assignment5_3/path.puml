@@ -1,0 +1,10 @@
+@startuml
+class Path {
+    + coords : string
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Path(coords:string, fill:string, stroke:string, strokeWidth:string)
+    + printShape(caretaker:Caretaker) : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Factory {
+    + GenerateShape(cmdCont:string[], caretaker:Caretaker) : void
+}
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class Circle {
+    + cx : int
+    + cy : int
+    + r : int
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Circle(cx:int, cy:int, r:int, fill:string, stroke:string, strokeWidth:string)
+    + printShape() : string
+}
+@enduml

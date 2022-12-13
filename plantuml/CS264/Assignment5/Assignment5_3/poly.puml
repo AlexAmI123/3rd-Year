@@ -1,0 +1,10 @@
+@startuml
+class Polygon {
+    + coords : string
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Polygon(coords:string, fill:string, stroke:string, strokeWidth:string)
+    + printShape(caretaker:Caretaker) : void
+}
+@enduml

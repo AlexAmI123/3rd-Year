@@ -1,0 +1,8 @@
+@startuml
+class CreateSVG {
+    + CreateSVG(canvas:List<string>)
+}
+class "List`1"<T> {
+}
+CreateSVG --> "canvas<string>" "List`1"
+@enduml

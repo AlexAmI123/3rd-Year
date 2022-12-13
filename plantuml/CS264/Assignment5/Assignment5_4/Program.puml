@@ -1,0 +1,11 @@
+@startuml
+class assignment5 {
+    + {static} cmdLine : string
+    + {static} exit : bool = false
+    + {static} Main(args:String[]) : void
+}
+class "List`1"<T> {
+}
+assignment5 o-> "canvas<string>" "List`1"
+assignment5 o-> "redoList<string>" "List`1"
+@enduml

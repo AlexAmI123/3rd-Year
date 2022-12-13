@@ -1,0 +1,5 @@
+@startuml
+class Factory {
+    + GenerateShape(cmdCont:string[], canvas:List<string>) : void
+}
+@enduml
