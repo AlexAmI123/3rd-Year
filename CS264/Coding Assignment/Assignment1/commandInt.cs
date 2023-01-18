@@ -42,6 +42,23 @@ public class Commands: CommandInt
     {
         Console.WriteLine("Removing from SVG file..");   
     }
+    //move commands
+    public void MoveUp()
+    {
+        Console.WriteLine("Moving Up..");   
+    }
+    public void MoveDown()
+    {
+        Console.WriteLine("Moving Down.."); 
+    }
+    public void MoveLeft()
+    {
+        Console.WriteLine("Moving Left.."); 
+    }
+    public void MoveRight()
+    {
+        Console.WriteLine("Moving Right.."); 
+    }
     public override string ToString()
     {
         return $"{this.shape}";
@@ -147,14 +164,170 @@ public class CreateSVGCMD: CommandInt
 public class RemoveCMD: CommandInt
 {
     public List<String> history;
+    public List<String> redoList;
     public int ind;
-    public RemoveCMD(List<string> history, int ind)
+    public RemoveCMD(List<string> history, List<string> redoList, int ind)
     {
         this.history = history;
+        this.redoList = redoList;
         this.ind = ind;
     }
     public void Execute()
     {
+        var temp = history[ind];
+        redoList.Add(temp);
         history.RemoveAt(ind);
+    }
+}
+public class MoveUp: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+    public int ind;
+    public int val;
+    public string type;
+    public MoveUp(List<string> history, List<string> redoList, string type, int val, int ind)
+    {
+        this.history = history;
+        this.redoList = redoList;
+        this.type = type;
+        this.ind = ind;
+        this.val = val;
+    }
+    public void Execute()
+    {
+        string temp = history[ind];
+        string temp2 = "";
+        redoList.Add(temp);
+
+        if(type == "left-eye"||type =="right-eye")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate(0,"+ -val +")\">";
+        }
+        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate(0,"+ -val +")\">";
+        }
+        history[ind] = temp2;
+    }
+}
+public class MoveDown: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+    public int ind;
+    public int val;
+    public string type;
+    public MoveDown(List<string> history, List<string> redoList, string type, int val, int ind)
+    {
+        this.history = history;
+        this.redoList = redoList;
+        this.type = type;
+        this.ind = ind;
+        this.val = val;
+    }
+    public void Execute()
+    {
+        string temp = history[ind];
+        string temp2 = "";
+        redoList.Add(temp);
+
+        if(type == "left-eye"||type =="right-eye")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate(0,"+ val +")\">";
+        }
+        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate(0,"+ val +")\">";
+        }
+        history[ind] = temp2;
+    }
+}
+public class MoveLeft: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+    public int ind;
+    public int val;
+    public string type;
+    public MoveLeft(List<string> history, List<string> redoList, string type, int val, int ind)
+    {
+        this.history = history;
+        this.redoList = redoList;
+        this.type = type;
+        this.ind = ind;
+        this.val = val;
+    }
+    public void Execute()
+    {
+        string temp = history[ind];
+        string temp2 = "";
+        redoList.Add(temp);
+
+        if(type == "left-eye"||type =="right-eye")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate("+ -val +")\">";
+        }
+        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate("+ -val +")\">";
+        }
+        history[ind] = temp2;
+    }
+}
+public class MoveRight: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+    public int ind;
+    public int val;
+    public string type;
+    public MoveRight(List<string> history, List<string> redoList, string type, int val, int ind)
+    {
+        this.history = history;
+        this.redoList = redoList;
+        this.type = type;
+        this.ind = ind;
+        this.val = val;
+    }
+    public void Execute()
+    {
+        string temp = history[ind];
+        string temp2 = "";
+        redoList.Add(temp);
+
+        if(type == "left-eye"||type =="right-eye")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate("+ val +")\">";
+        }
+        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        {
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+            
+            temp2 += "transform = \"translate("+ val +")\">";
+        }
+        history[ind] = temp2;
     }
 }

@@ -7,6 +7,9 @@ add mouth
 remove right-brow
 
 move mouth left 50
+move left-brow right 50
+move left-eye down 50
+move right-eye up 50
 
 rotate left-brow clockwise 20
 

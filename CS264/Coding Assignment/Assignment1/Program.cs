@@ -96,8 +96,8 @@ namespace Program
                             {
                                 if(commands[i] == "left-eye")
                                 {
-                                    int ind = i;
-                                    RemoveCMD r0 = new RemoveCMD(canvas, ind+2);
+                                    int ind = i+2;
+                                    RemoveCMD r0 = new RemoveCMD(canvas, redoList, ind);
                                     r0.Execute();
                                     commands.RemoveAt(i);
                                 }
@@ -109,8 +109,8 @@ namespace Program
                             {
                                 if(commands[i] == "right-eye")
                                 {
-                                    int ind = i;
-                                    RemoveCMD r1 = new RemoveCMD(canvas, ind+2);
+                                    int ind = i+2;
+                                    RemoveCMD r1 = new RemoveCMD(canvas, redoList, ind);
                                     r1.Execute();
                                     commands.RemoveAt(i);
                                 }
@@ -122,8 +122,8 @@ namespace Program
                             {
                                 if(commands[i] == "left-brow")
                                 {
-                                    int ind = i;
-                                    RemoveCMD r2 = new RemoveCMD(canvas, ind+2);
+                                    int ind = i+2;
+                                    RemoveCMD r2 = new RemoveCMD(canvas, redoList, ind);
                                     r2.Execute();
                                     commands.RemoveAt(i);
                                 }
@@ -135,8 +135,8 @@ namespace Program
                             {
                                 if(commands[i] == "right-brow")
                                 {
-                                    int ind = i;
-                                    RemoveCMD r3 = new RemoveCMD(canvas, ind+2);
+                                    int ind = i+2;
+                                    RemoveCMD r3 = new RemoveCMD(canvas, redoList, ind);
                                     r3.Execute();
                                     commands.RemoveAt(i);
                                 }
@@ -148,8 +148,8 @@ namespace Program
                             {
                                 if(commands[i] == "mouth")
                                 {
-                                    int ind = i;
-                                    RemoveCMD r4 = new RemoveCMD(canvas, ind+2);
+                                    int ind = i+2;
+                                    RemoveCMD r4 = new RemoveCMD(canvas, redoList, ind);
                                     r4.Execute();
                                     commands.RemoveAt(i);
                                 }
@@ -161,95 +161,255 @@ namespace Program
                         {
                             if(cmdCont[2].Equals("up"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveUp m0 = new MoveUp(canvas, redoList, "left-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m0.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("down"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveDown m1 = new MoveDown(canvas, redoList, "left-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m1.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("left"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveLeft m2 = new MoveLeft(canvas, redoList, "left-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m2.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("right"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveRight m3 = new MoveRight(canvas, redoList, "left-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m3.Execute();
+                                    }
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("right-eye"))
                         {
                             if(cmdCont[2].Equals("up"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveUp m4 = new MoveUp(canvas, redoList, "right-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m4.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("down"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveDown m5 = new MoveDown(canvas, redoList, "right-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m5.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("left"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveLeft m6 = new MoveLeft(canvas, redoList, "right-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m6.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("right"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-eye")
+                                    {
+                                        int ind = i+2;
+                                        MoveRight m7 = new MoveRight(canvas, redoList, "right-eye", int.Parse(cmdCont[3]) ,ind);
+                                        m7.Execute();
+                                    }
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("left-brow"))
                         {
                             if(cmdCont[2].Equals("up"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveUp m8 = new MoveUp(canvas, redoList, "left-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m8.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("down"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveDown m9 = new MoveDown(canvas, redoList, "left-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m9.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("left"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveLeft m10 = new MoveLeft(canvas, redoList, "left-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m10.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("right"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "left-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveRight m11 = new MoveRight(canvas, redoList, "left-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m11.Execute();
+                                    }
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("right-brow"))
                         {
                             if(cmdCont[2].Equals("up"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveUp m12 = new MoveUp(canvas, redoList, "right-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m12.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("down"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveDown m13 = new MoveDown(canvas, redoList, "right-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m13.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("left"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveLeft m14 = new MoveLeft(canvas, redoList, "right-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m14.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("right"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "right-brow")
+                                    {
+                                        int ind = i+2;
+                                        MoveRight m15 = new MoveRight(canvas, redoList, "right-brow", int.Parse(cmdCont[3]) ,ind);
+                                        m15.Execute();
+                                    }
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("mouth"))
                         {
                             if(cmdCont[2].Equals("up"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "mouth")
+                                    {
+                                        int ind = i+2;
+                                        MoveUp m16 = new MoveUp(canvas, redoList, "mouth", int.Parse(cmdCont[3]) ,ind);
+                                        m16.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("down"))
                             {
-
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "mouth")
+                                    {
+                                        int ind = i+2;
+                                        MoveDown m17 = new MoveDown(canvas, redoList, "mouth", int.Parse(cmdCont[3]) ,ind);
+                                        m17.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("left"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "mouth")
+                                    {
+                                        int ind = i+2;
+                                        MoveLeft m18 = new MoveLeft(canvas, redoList, "mouth", int.Parse(cmdCont[3]) ,ind);
+                                        m18.Execute();
+                                    }
+                                }
                             }
                             else if(cmdCont[2].Equals("right"))
                             {
-                                
+                                for(int i = 0; i < commands.Count; i++)
+                                {
+                                    if(commands[i] == "mouth")
+                                    {
+                                        int ind = i+2;
+                                        MoveRight m19 = new MoveRight(canvas, redoList, "mouth", int.Parse(cmdCont[3]) ,ind);
+                                        m19.Execute();
+                                    }
+                                }
                             }
                         }
                         break;
