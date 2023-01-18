@@ -17,6 +17,7 @@ namespace Program
     {
         public static List<string> canvas = new List<string>();
         public static List<string> redoList = new List<string>();
+        public static List<string> commands = new List<string>();
         public static void Main(String[]args)
         {
             //Declaring all variables
@@ -53,6 +54,7 @@ namespace Program
                             Eye le = new Eye(780,400,50,"black","black", "10");
                             AddCMD c0 = new AddCMD(le.printShape(),canvas);
                             c0.Execute();
+                            commands.Add("left-eye");
                         }
                         else if(cmdCont[1].Equals("right-eye"))
                         {
@@ -60,6 +62,7 @@ namespace Program
                             Eye re = new Eye(1140,400,50,"black","black", "10");
                             AddCMD c1 = new AddCMD(re.printShape(),canvas);
                             c1.Execute();
+                            commands.Add("right-eye");
                         }
                         else if(cmdCont[1].Equals("left-brow"))
                         {
@@ -67,6 +70,7 @@ namespace Program
                             Brow lb = new Brow(730,310,830,310,"black", "15");
                             AddCMD c2 = new AddCMD(lb.printShape(),canvas);
                             c2.Execute();
+                            commands.Add("left-brow");
                         }
                         else if(cmdCont[1].Equals("right-brow"))
                         {
@@ -74,6 +78,7 @@ namespace Program
                             Brow rb = new Brow(1090,310,1190,310,"black", "15");
                             AddCMD c3 = new AddCMD(rb.printShape(),canvas);
                             c3.Execute();
+                            commands.Add("right-brow");
                         }
                         else if(cmdCont[1].Equals("mouth"))
                         {
@@ -81,28 +86,74 @@ namespace Program
                             Brow rb = new Brow(800,750,1120,750,"black", "30");
                             AddCMD c3 = new AddCMD(rb.printShape(),canvas);
                             c3.Execute();
+                            commands.Add("mouth");
                         }
                         break;
                     case "remove":
                         if(cmdCont[1].Equals("left-eye"))
                         {
-                            
+                            for(int i = 0; i < commands.Count; i++)
+                            {
+                                if(commands[i] == "left-eye")
+                                {
+                                    int ind = i;
+                                    RemoveCMD r0 = new RemoveCMD(canvas, ind+2);
+                                    r0.Execute();
+                                    commands.RemoveAt(i);
+                                }
+                            }
                         }
                         else if(cmdCont[1].Equals("right-eye"))
                         {
-                            
+                            for(int i = 0; i < commands.Count; i++)
+                            {
+                                if(commands[i] == "right-eye")
+                                {
+                                    int ind = i;
+                                    RemoveCMD r1 = new RemoveCMD(canvas, ind+2);
+                                    r1.Execute();
+                                    commands.RemoveAt(i);
+                                }
+                            }
                         }
                         else if(cmdCont[1].Equals("left-brow"))
                         {
-                            
+                            for(int i = 0; i < commands.Count; i++)
+                            {
+                                if(commands[i] == "left-brow")
+                                {
+                                    int ind = i;
+                                    RemoveCMD r2 = new RemoveCMD(canvas, ind+2);
+                                    r2.Execute();
+                                    commands.RemoveAt(i);
+                                }
+                            }
                         }
                         else if(cmdCont[1].Equals("right-brow"))
                         {
-                            
+                            for(int i = 0; i < commands.Count; i++)
+                            {
+                                if(commands[i] == "right-brow")
+                                {
+                                    int ind = i;
+                                    RemoveCMD r3 = new RemoveCMD(canvas, ind+2);
+                                    r3.Execute();
+                                    commands.RemoveAt(i);
+                                }
+                            }
                         }
                         else if(cmdCont[1].Equals("mouth"))
                         {
-                            
+                            for(int i = 0; i < commands.Count; i++)
+                            {
+                                if(commands[i] == "mouth")
+                                {
+                                    int ind = i;
+                                    RemoveCMD r4 = new RemoveCMD(canvas, ind+2);
+                                    r4.Execute();
+                                    commands.RemoveAt(i);
+                                }
+                            }
                         }
                         break;
                     case "move":

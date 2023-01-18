@@ -37,6 +37,11 @@ public class Commands: CommandInt
     {
         Console.WriteLine("Creating SVG file..");   
     }
+    //remove from canvas
+    public void RemoveSVG()
+    {
+        Console.WriteLine("Removing from SVG file..");   
+    }
     public override string ToString()
     {
         return $"{this.shape}";
@@ -47,7 +52,6 @@ public class AddCMD: CommandInt
 {
     public List<String> history;
     public List<String> redoList;
-
     public string shape;
 
     public AddCMD(String shape, List<string> history)
@@ -138,5 +142,19 @@ public class CreateSVGCMD: CommandInt
                 sw.WriteLine($"{history[i].ToString()}");
             }
         }
+    }
+}
+public class RemoveCMD: CommandInt
+{
+    public List<String> history;
+    public int ind;
+    public RemoveCMD(List<string> history, int ind)
+    {
+        this.history = history;
+        this.ind = ind;
+    }
+    public void Execute()
+    {
+        history.RemoveAt(ind);
     }
 }

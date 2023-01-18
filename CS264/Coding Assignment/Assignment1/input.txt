@@ -1,0 +1,21 @@
+add left-eye
+add right-eye
+add left-brow
+add right-brow
+add mouth
+
+remove right-brow
+
+move mouth left 50
+
+rotate left-brow clockwise 20
+
+undo
+
+redo
+
+draw
+
+save emoji.svg
+
+quit
