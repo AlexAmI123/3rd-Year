@@ -359,8 +359,8 @@ public class Rotate: CommandInt
         
         if(type == "left-eye"||type == "right-eye")
         {
-            int cx = int.Parse(tsplit[3]);
-            int cy = int.Parse(tsplit[5]);
+            int cx = int.Parse(tsplit[1]);
+            int cy = int.Parse(tsplit[3]);
             
             int len = temp.Length-2;
             temp2 = temp[0..len];
@@ -377,19 +377,6 @@ public class Rotate: CommandInt
         }
         else
         {
-            // Console.WriteLine("a"+tsplit[1]);
-            // Console.WriteLine("b"+tsplit[2]);
-            // Console.WriteLine("c"+tsplit[3]);
-            // Console.WriteLine("d"+tsplit[4]);
-            // Console.WriteLine("e"+tsplit[5]);
-            // Console.WriteLine("f"+tsplit[6]);
-            // Console.WriteLine("g"+tsplit[7]);
-            // Console.WriteLine("h"+tsplit[8]);
-            // Console.WriteLine("i"+tsplit[9]);
-            // Console.WriteLine("j"+tsplit[10]);
-            // Console.WriteLine("k"+tsplit[11]);
-            
-
             int x1 = int.Parse(tsplit[1]);
             int x2 = int.Parse(tsplit[5]);
             int y1 = int.Parse(tsplit[3]);
@@ -400,20 +387,20 @@ public class Rotate: CommandInt
 
             if(x1 > x2)
             {
-                midx = x2+(x1-x2);
+                midx = x2+(x1-x2)*1/2;
             }
             else
             {
-                midx = x1+(x2-x1);
+                midx = x1+(x2-x1)*1/2;
             }
 
             if(y1 > y2)
             {
-                midy = y2+(y1-y2);
+                midy = y2+(y1-y2)*1/2;
             }
             else
             {
-                midy = y1+(y2-y1);
+                midy = y1+(y2-y1)*1/2;
             }
 
             int len = temp.Length-2;
