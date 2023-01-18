@@ -416,57 +416,62 @@ namespace Program
                     case "rotate":
                         if(cmdCont[1].Equals("left-eye"))
                         {
-                            if(cmdCont[2].Equals("clockwise"))
+                            for(int i = 0; i < commands.Count; i++)
                             {
-
-                            }
-                            else if(cmdCont[2].Equals("anticlockwise"))
-                            {
-
+                                if(commands[i] == "left-eye")
+                                {
+                                    int ind2 = i+2;
+                                    Rotate ro1 = new Rotate(canvas, redoList, cmdCont[1], cmdCont[2], int.Parse(cmdCont[3]) ,ind2);
+                                    ro1.Execute();
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("right-eye"))
                         {
-                            if(cmdCont[2].Equals("clockwise"))
+                            for(int i = 0; i < commands.Count; i++)
                             {
-
-                            }
-                            else if(cmdCont[2].Equals("anticlockwise"))
-                            {
-
+                                if(commands[i] == "right-eye")
+                                {
+                                    int ind2 = i+2;
+                                    Rotate ro2 = new Rotate(canvas, redoList, cmdCont[1], cmdCont[2], int.Parse(cmdCont[3]) ,ind2);
+                                    ro2.Execute();
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("left-brow"))
                         {
-                            if(cmdCont[2].Equals("clockwise"))
+                            for(int i = 0; i < commands.Count; i++)
                             {
-
-                            }
-                            else if(cmdCont[2].Equals("anticlockwise"))
-                            {
-
+                                if(commands[i] == "left-brow")
+                                {
+                                    int ind2 = i+2;
+                                    Rotate ro3 = new Rotate(canvas, redoList, cmdCont[1], cmdCont[2], int.Parse(cmdCont[3]) ,ind2);
+                                    ro3.Execute();
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("right-brow"))
                         {
-                            if(cmdCont[2].Equals("clockwise"))
+                            for(int i = 0; i < commands.Count; i++)
                             {
-
-                            }
-                            else if(cmdCont[2].Equals("anticlockwise"))
-                            {
-
+                                if(commands[i] == "right-brow")
+                                {
+                                    int ind2 = i+2;
+                                    Rotate ro4 = new Rotate(canvas, redoList, cmdCont[1], cmdCont[2], int.Parse(cmdCont[3]) ,ind2);
+                                    ro4.Execute();
+                                }
                             }
                         }
                         else if(cmdCont[1].Equals("mouth"))
                         {
-                            if(cmdCont[2].Equals("clockwise"))
+                            for(int i = 0; i < commands.Count; i++)
                             {
-
-                            }
-                            else if(cmdCont[2].Equals("anticlockwise"))
-                            {
-
+                                if(commands[i] == "mouth")
+                                {
+                                    int ind2 = i+2;
+                                    Rotate ro5 = new Rotate(canvas, redoList, cmdCont[1], cmdCont[2], int.Parse(cmdCont[3]) ,ind2);
+                                    ro5.Execute();
+                                }
                             }
                         }
                         break;

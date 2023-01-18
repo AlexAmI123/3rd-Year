@@ -59,6 +59,11 @@ public class Commands: CommandInt
     {
         Console.WriteLine("Moving Right.."); 
     }
+    //rotate command
+    public void Rotate()
+    {
+        Console.WriteLine("Rotating.."); 
+    }
     public override string ToString()
     {
         return $"{this.shape}";
@@ -200,19 +205,16 @@ public class MoveUp: CommandInt
         string temp2 = "";
         redoList.Add(temp);
 
-        if(type == "left-eye"||type =="right-eye")
+        int len = temp.Length-2;
+        temp2 = temp[0..len];
+        
+        if(temp2.Contains("transform"))
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate(0,"+ -val +")\">";
+            temp2 += " \"translate("+ -val +")\" >";
         }
-        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        else
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate(0,"+ -val +")\">";
+            temp2 += "transform = \"translate(0,"+ -val +")\" >";
         }
         history[ind] = temp2;
     }
@@ -238,20 +240,18 @@ public class MoveDown: CommandInt
         string temp2 = "";
         redoList.Add(temp);
 
-        if(type == "left-eye"||type =="right-eye")
+        int len = temp.Length-2;
+        temp2 = temp[0..len];
+        
+        if(temp2.Contains("transform"))
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate(0,"+ val +")\">";
+            temp2 += " \"translate("+ val +")\" >";
         }
-        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        else
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate(0,"+ val +")\">";
+            temp2 += "transform = \"translate(0,"+ val +")\" >";
         }
+    
         history[ind] = temp2;
     }
 }
@@ -276,20 +276,18 @@ public class MoveLeft: CommandInt
         string temp2 = "";
         redoList.Add(temp);
 
-        if(type == "left-eye"||type =="right-eye")
+        int len = temp.Length-2;
+        temp2 = temp[0..len];
+        
+        if(temp2.Contains("transform"))
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate("+ -val +")\">";
+            temp2 += " \"translate("+ -val +")\" >";
         }
-        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        else
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate("+ -val +")\">";
+            temp2 += "transform = \"translate("+ -val +")\" >";
         }
+    
         history[ind] = temp2;
     }
 }
@@ -314,20 +312,122 @@ public class MoveRight: CommandInt
         string temp2 = "";
         redoList.Add(temp);
 
-        if(type == "left-eye"||type =="right-eye")
+        int len = temp.Length-2;
+        temp2 = temp[0..len];
+
+        if(temp2.Contains("transform"))
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate("+ val +")\">";
+            temp2 += " \"translate("+ val +")\" >";
         }
-        else if(type == "left-brow"||type =="right-brow"||type =="mouth")
+        else
         {
-            int len = temp.Length-2;
-            temp2 = temp[0..len];
-            
-            temp2 += "transform = \"translate("+ val +")\">";
+            temp2 += "transform = \"translate("+ val +")\" >";
         }
         history[ind] = temp2;
+    }
+}
+
+public class Rotate: CommandInt
+{
+    public List<String> history;
+    public List<String> redoList;
+    public string type;
+    public string dir;
+    public int ind;
+    public int val;
+    public Rotate(List<string> history, List<string> redoList,string type,string dir, int val, int ind)
+    {
+        this.history = history;
+        this.redoList = redoList;
+        this.type = type;
+        this.dir = dir;
+        this.ind = ind;
+        this.val = val;
+    }
+    public void Execute()
+    {
+        string temp = history[ind];
+        string temp2 = "";
+        redoList.Add(temp);
+
+        if(dir == "anticlockwise")
+        {
+            val = 0-val;
+        }
+
+        string[] tsplit = temp.Split("\"");
+        
+        if(type == "left-eye"||type == "right-eye")
+        {
+            int cx = int.Parse(tsplit[3]);
+            int cy = int.Parse(tsplit[5]);
+            
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+
+            if(temp2.Contains("transform"))
+            {
+                temp2 += " \"rotate("+ val +","+cx + "," +cy + ")\" />";
+            }
+            else
+            {
+                temp2 += "transform = \"rotate("+ val +","+ cx+ "," +cy + ")\" />";
+            }
+            history[ind] = temp2;
+        }
+        else
+        {
+            // Console.WriteLine("a"+tsplit[1]);
+            // Console.WriteLine("b"+tsplit[2]);
+            // Console.WriteLine("c"+tsplit[3]);
+            // Console.WriteLine("d"+tsplit[4]);
+            // Console.WriteLine("e"+tsplit[5]);
+            // Console.WriteLine("f"+tsplit[6]);
+            // Console.WriteLine("g"+tsplit[7]);
+            // Console.WriteLine("h"+tsplit[8]);
+            // Console.WriteLine("i"+tsplit[9]);
+            // Console.WriteLine("j"+tsplit[10]);
+            // Console.WriteLine("k"+tsplit[11]);
+            
+
+            int x1 = int.Parse(tsplit[1]);
+            int x2 = int.Parse(tsplit[5]);
+            int y1 = int.Parse(tsplit[3]);
+            int y2 = int.Parse(tsplit[7]);
+
+            int midx;
+            int midy;
+
+            if(x1 > x2)
+            {
+                midx = x2+(x1-x2);
+            }
+            else
+            {
+                midx = x1+(x2-x1);
+            }
+
+            if(y1 > y2)
+            {
+                midy = y2+(y1-y2);
+            }
+            else
+            {
+                midy = y1+(y2-y1);
+            }
+
+            int len = temp.Length-2;
+            temp2 = temp[0..len];
+
+            if(temp2.Contains("transform"))
+            {
+                temp2 += " \"rotate("+ val +","+midx + "," +midy + ")\" />";
+            }
+            else
+            {
+                temp2 += "transform = \"rotate("+ val +","+ midx+ "," +midy + ")\" />";
+            }
+            history[ind] = temp2;
+        }
     }
 }
