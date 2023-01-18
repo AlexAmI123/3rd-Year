@@ -1,4 +1,4 @@
-public class Mouth
+public class Brow
 {
     public int x1;
     public int y1;
@@ -6,7 +6,7 @@ public class Mouth
     public int y2;
     public string stroke;
     public string strokeWidth;
-    public Mouth(int x1, int y1, int x2, int y2, string stroke, string strokeWidth)
+    public Brow(int x1, int y1, int x2, int y2, string stroke, string strokeWidth)
     {
         this.x1 = x1;
         this.y1 = y1;

@@ -29,6 +29,11 @@ namespace Program
             AddCMD add = new AddCMD(canvasSize, canvas);
             add.Execute();
 
+            //Adding the main face to emoji
+            String Ycirc = "<circle cx = \"960\" cy = \"540\" r = \"500\" style = \" fill : yellow ; stroke : black ; stroke-width : 10\" />";
+            AddCMD add1 = new AddCMD(Ycirc, canvas);
+            add1.Execute();
+
             //Getting input in a do while loop
             do
             {
@@ -44,23 +49,38 @@ namespace Program
                     case "add":
                         if(cmdCont[1].Equals("left-eye"))
                         {
-                            
+                            //creating eye and adding it to canvas
+                            Eye le = new Eye(780,400,50,"black","black", "10");
+                            AddCMD c0 = new AddCMD(le.printShape(),canvas);
+                            c0.Execute();
                         }
                         else if(cmdCont[1].Equals("right-eye"))
                         {
-                            
+                            //creating eye and adding it to canvas
+                            Eye re = new Eye(1140,400,50,"black","black", "10");
+                            AddCMD c1 = new AddCMD(re.printShape(),canvas);
+                            c1.Execute();
                         }
                         else if(cmdCont[1].Equals("left-brow"))
                         {
-                            
+                            //creating brow and adding it to canvas
+                            Brow lb = new Brow(730,310,830,310,"black", "15");
+                            AddCMD c2 = new AddCMD(lb.printShape(),canvas);
+                            c2.Execute();
                         }
                         else if(cmdCont[1].Equals("right-brow"))
                         {
-                            
+                            //creating brow and adding it to canvas
+                            Brow rb = new Brow(1090,310,1190,310,"black", "15");
+                            AddCMD c3 = new AddCMD(rb.printShape(),canvas);
+                            c3.Execute();
                         }
                         else if(cmdCont[1].Equals("mouth"))
                         {
-                            
+                            //creating mouthw and adding it to canvas
+                            Brow rb = new Brow(800,750,1120,750,"black", "30");
+                            AddCMD c3 = new AddCMD(rb.printShape(),canvas);
+                            c3.Execute();
                         }
                         break;
                     case "remove":
