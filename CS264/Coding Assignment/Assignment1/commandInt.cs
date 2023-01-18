@@ -123,13 +123,15 @@ public class PrintSVGCMD: CommandInt
 public class CreateSVGCMD: CommandInt
 {
     public List<String> history;
-    public CreateSVGCMD(List<string> history)
+    public String name;
+    public CreateSVGCMD(List<string> history, string name)
     {
         this.history = history;
+        this.name = name;
     }
     public void Execute()
     {
-        using (StreamWriter sw = File.CreateText(@"output.svg"))
+        using (StreamWriter sw = File.CreateText(name))
         {
             for (int i = 0; i < history.Count(); i++)
             {

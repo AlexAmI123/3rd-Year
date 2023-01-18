@@ -32,11 +32,6 @@ namespace Program
             //Getting input in a do while loop
             do
             {
-                
-                
-               
-
-
                 //read in next line
                 cmdLine = Console.ReadLine();
 
@@ -47,46 +42,289 @@ namespace Program
                 switch(cmdCont[0])
                 {
                     case "add":
-                        if(cmdCont[2].Equals("left-eye"))
+                        if(cmdCont[1].Equals("left-eye"))
                         {
-                            String canvasEnd1 = "xyz";
-                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
-                            addEnd1.Execute();
+                            
                         }
-                        else if(cmdCont[2].Equals("right-eye"))
+                        else if(cmdCont[1].Equals("right-eye"))
                         {
-                            String canvasEnd1 = "xyz";
-                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
-                            addEnd1.Execute();
+                            
                         }
-                        else if(cmdCont[2].Equals("left-brow"))
+                        else if(cmdCont[1].Equals("left-brow"))
                         {
-                            String canvasEnd1 = "xyz";
-                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
-                            addEnd1.Execute();
+                            
                         }
-                        else if(cmdCont[2].Equals("right-brow"))
+                        else if(cmdCont[1].Equals("right-brow"))
                         {
-                            String canvasEnd1 = "xyz";
-                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
-                            addEnd1.Execute();
+                            
                         }
-                        else if(cmdCont[2].Equals("mouth"))
+                        else if(cmdCont[1].Equals("mouth"))
                         {
-                            String canvasEnd1 = "xyz";
-                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
-                            addEnd1.Execute();
+                            
                         }
                         break;
                     case "remove":
+                        if(cmdCont[1].Equals("left-eye"))
+                        {
+                            
+                        }
+                        else if(cmdCont[1].Equals("right-eye"))
+                        {
+                            
+                        }
+                        else if(cmdCont[1].Equals("left-brow"))
+                        {
+                            
+                        }
+                        else if(cmdCont[1].Equals("right-brow"))
+                        {
+                            
+                        }
+                        else if(cmdCont[1].Equals("mouth"))
+                        {
+                            
+                        }
                         break;
                     case "move":
+                        if(cmdCont[1].Equals("left-eye"))
+                        {
+                            if(cmdCont[2].Equals("up"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("down"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("left"))
+                            {
+                                
+                            }
+                            else if(cmdCont[2].Equals("right"))
+                            {
+                                
+                            }
+                        }
+                        else if(cmdCont[1].Equals("right-eye"))
+                        {
+                            if(cmdCont[2].Equals("up"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("down"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("left"))
+                            {
+                                
+                            }
+                            else if(cmdCont[2].Equals("right"))
+                            {
+                                
+                            }
+                        }
+                        else if(cmdCont[1].Equals("left-brow"))
+                        {
+                            if(cmdCont[2].Equals("up"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("down"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("left"))
+                            {
+                                
+                            }
+                            else if(cmdCont[2].Equals("right"))
+                            {
+                                
+                            }
+                        }
+                        else if(cmdCont[1].Equals("right-brow"))
+                        {
+                            if(cmdCont[2].Equals("up"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("down"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("left"))
+                            {
+                                
+                            }
+                            else if(cmdCont[2].Equals("right"))
+                            {
+                                
+                            }
+                        }
+                        else if(cmdCont[1].Equals("mouth"))
+                        {
+                            if(cmdCont[2].Equals("up"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("down"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("left"))
+                            {
+                                
+                            }
+                            else if(cmdCont[2].Equals("right"))
+                            {
+                                
+                            }
+                        }
                         break;
                     case "rotate":
+                        if(cmdCont[1].Equals("left-eye"))
+                        {
+                            if(cmdCont[2].Equals("clockwise"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("anticlockwise"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("right-eye"))
+                        {
+                            if(cmdCont[2].Equals("clockwise"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("anticlockwise"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("left-brow"))
+                        {
+                            if(cmdCont[2].Equals("clockwise"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("anticlockwise"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("right-brow"))
+                        {
+                            if(cmdCont[2].Equals("clockwise"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("anticlockwise"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("mouth"))
+                        {
+                            if(cmdCont[2].Equals("clockwise"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("anticlockwise"))
+                            {
+
+                            }
+                        }
                         break;
                     case "style":
+                        if(cmdCont[1].Equals("left-eye"))
+                        {
+                            if(cmdCont[2].Equals("A"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("B"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("C"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("right-eye"))
+                        {
+                            if(cmdCont[2].Equals("A"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("B"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("C"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("left-brow"))
+                        {
+                            if(cmdCont[2].Equals("A"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("B"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("C"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("right-brow"))
+                        {
+                            if(cmdCont[2].Equals("A"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("B"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("C"))
+                            {
+
+                            }
+                        }
+                        else if(cmdCont[1].Equals("mouth"))
+                        {
+                            if(cmdCont[2].Equals("A"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("B"))
+                            {
+
+                            }
+                            else if(cmdCont[2].Equals("C"))
+                            {
+
+                            }
+                        }
                         break;
                     case "save":
+                        //ending the canvas list
+                        String canvasEnd = "</svg>";
+                        AddCMD addEnd = new AddCMD(canvasEnd, canvas);
+                        addEnd.Execute();
+
+                        //create output file
+                        CreateSVGCMD createFile = new CreateSVGCMD(canvas,cmdCont[1]);
+                        createFile.Execute();
                         break;
                     case "draw":
                         //clearing console
@@ -129,14 +367,6 @@ namespace Program
                         quit = true;break;
                 }
             }while (quit != true);
-            //ending the canvas list
-            String canvasEnd = "</svg>";
-            AddCMD addEnd = new AddCMD(canvasEnd, canvas);
-            addEnd.Execute();
-
-            //create output file
-            CreateSVGCMD createFile = new CreateSVGCMD(canvas);
-            createFile.Execute();
         }
     }
 }
