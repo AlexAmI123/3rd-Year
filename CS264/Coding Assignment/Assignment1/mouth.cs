@@ -1,4 +1,4 @@
-public class Circle
+public class Mouth
 {
     public int cx;
     public int cy;
@@ -7,7 +7,7 @@ public class Circle
     public string stroke;
     public string strokeWidth;
 
-    public Circle(int cx,int cy, int r, string fill,string stroke, string strokeWidth)
+    public Mouth(int cx,int cy, int r, string fill,string stroke, string strokeWidth)
     {
         this.cx = cx;
         this.cy = cy;
@@ -17,8 +17,7 @@ public class Circle
         this.strokeWidth = strokeWidth;
         printShape();
     }
-    //add said shape to Memento
-    public String printShape(/*Caretaker caretaker*/)
+    public String printShape()
     {
         string data = "<circle cx = \"" + cx + "\" cy = \"" + cy + "\" r = \"" + r + "\" style = \" fill : " + fill + " ; stroke : "+stroke+ " ; stroke-width : " + strokeWidth +"\" />";
         return data;
