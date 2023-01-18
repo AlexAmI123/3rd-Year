@@ -1,0 +1,10 @@
+@startuml
+class Command {
+    + {static} Main(args:String[]) : void
+}
+class "List`1"<T> {
+}
+Command o-> "canvas<string>" "List`1"
+Command o-> "redoList<string>" "List`1"
+Command o-> "commands<string>" "List`1"
+@enduml

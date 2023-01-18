@@ -1,0 +1,12 @@
+@startuml
+class Brow {
+    + x1 : int
+    + y1 : int
+    + x2 : int
+    + y2 : int
+    + stroke : string
+    + strokeWidth : string
+    + Brow(x1:int, y1:int, x2:int, y2:int, stroke:string, strokeWidth:string)
+    + printShape(caretaker:Caretaker) : void
+}
+@enduml

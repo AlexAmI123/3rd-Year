@@ -1,292 +1,111 @@
 @startuml
-class assignment1 {
-    + {static} Main(args:String[]) : void
-}
-class Tabconv {
-    + Tabconv(inputFile:string, outputFile:string, v:bool, i:bool, o:bool, h:bool, l:bool)
-}
-class Circle {
-    + cx : int
-    + cy : int
-    + r : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Circle(cx:int, cy:int, r:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class CreateSVG {
-    + CreateSVG(canvas:List<string>)
-}
-class "List`1"<T> {
-}
-CreateSVG --> "canvas<string>" "List`1"
-class Ellipse {
-    + rx : int
-    + ry : int
-    + cx : int
-    + cy : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Ellipse(rx:int, ry:int, cx:int, cy:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Line {
-    + x1 : int
-    + y1 : int
-    + x2 : int
-    + y2 : int
-    + stroke : string
-    + strokeWidth : string
-    + Line(x1:int, y1:int, x2:int, y2:int, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Path {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Path(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Polyline {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Polyline(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Polygon {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Polygon(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class assignment1 {
-    + {static} Main(args:String[]) : void
-}
-class Rectangle {
-    + x : int
-    + y : int
-    + width : int
-    + height : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Rectangle(x:int, y:int, width:int, height:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Caretaker {
-    + addMemento(shape:Memento) : void
-    + undo() : void
-    + redo() : void
-    + printMemento() : void
-    + CreateMomentoSVG() : void
-}
-class "List`1"<T> {
-}
-Caretaker o-> "history<Memento>" "List`1"
-Caretaker o-> "redoList<Memento>" "List`1"
-class Circle {
-    + cx : int
-    + cy : int
-    + r : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Circle(cx:int, cy:int, r:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class Ellipse {
-    + rx : int
-    + ry : int
-    + cx : int
-    + cy : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Ellipse(rx:int, ry:int, cx:int, cy:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class Line {
-    + x1 : int
-    + y1 : int
-    + x2 : int
-    + y2 : int
-    + stroke : string
-    + strokeWidth : string
-    + Line(x1:int, y1:int, x2:int, y2:int, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class Memento {
-    shape : string = ""
-    + Memento(shape:string)
-    + <<override>> ToString() : string
-}
-class Path {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Path(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class Polyline {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Polyline(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class Polygon {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Polygon(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class assignment3 {
-    + {static} Main(args:String[]) : void
-}
-assignment3 o-> "caretaker" Caretaker
-class Rectangle {
-    + x : int
-    + y : int
-    + width : int
-    + height : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Rectangle(x:int, y:int, width:int, height:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape(caretaker:Caretaker) : void
-}
-class Circle {
-    + cx : int
-    + cy : int
-    + r : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Circle(cx:int, cy:int, r:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : String
-}
-interface CommandInt {
-    Execute() : void
-}
-class Commands {
-    shape : string
-    + Commands(shape:string)
-    + Execute() : void
-    + Undo() : void
-    + Redo() : void
-    + PrintSVG() : void
-    + CreateSVG() : void
-    + <<override>> ToString() : string
-}
-class AddCMD {
-    + shape : string
-    + AddCMD(shape:String, history:List<string>)
-    + Execute() : void
-}
-class UndoCMD {
-    + UndoCMD(history:List<string>, redoList:List<string>)
-    + Execute() : void
-}
-class RedoCMD {
-    + RedoCMD(history:List<string>, redoList:List<string>)
-    + Execute() : void
-}
-class PrintSVGCMD {
-    + PrintSVGCMD(history:List<string>)
-    + Execute() : void
-}
-class CreateSVGCMD {
-    + CreateSVGCMD(history:List<string>)
-    + Execute() : void
-}
-class "List`1"<T> {
-}
-CommandInt <|-- Commands
-CommandInt <|-- AddCMD
-AddCMD --> "history<String>" "List`1"
-AddCMD --> "redoList<String>" "List`1"
-CommandInt <|-- UndoCMD
-UndoCMD --> "history<String>" "List`1"
-UndoCMD --> "redoList<String>" "List`1"
-CommandInt <|-- RedoCMD
-RedoCMD --> "history<String>" "List`1"
-RedoCMD --> "redoList<String>" "List`1"
-CommandInt <|-- PrintSVGCMD
-PrintSVGCMD --> "history<String>" "List`1"
-CommandInt <|-- CreateSVGCMD
-CreateSVGCMD --> "history<String>" "List`1"
-class Ellipse {
-    + rx : int
-    + ry : int
-    + cx : int
-    + cy : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Ellipse(rx:int, ry:int, cx:int, cy:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Line {
-    + x1 : int
-    + y1 : int
-    + x2 : int
-    + y2 : int
-    + stroke : string
-    + strokeWidth : string
-    + Line(x1:int, y1:int, x2:int, y2:int, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Path {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Path(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Polyline {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Polyline(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class Polygon {
-    + coords : string
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Polygon(coords:string, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
-class assignment4 {
-    + {static} Main(args:String[]) : void
-}
-class "List`1"<T> {
-}
-assignment4 o-> "canvas<string>" "List`1"
-assignment4 o-> "redoList<string>" "List`1"
-class Rectangle {
-    + x : int
-    + y : int
-    + width : int
-    + height : int
-    + fill : string
-    + stroke : string
-    + strokeWidth : string
-    + Rectangle(x:int, y:int, width:int, height:int, fill:string, stroke:string, strokeWidth:string)
-    + printShape() : string
-}
+!include .\\CS264\Assignment1\Program.puml
+!include .\\CS264\Assignment1\Tabconv.puml
+!include .\\CS264\Assignment2\circ.puml
+!include .\\CS264\Assignment2\createSVG.puml
+!include .\\CS264\Assignment2\elli.puml
+!include .\\CS264\Assignment2\line.puml
+!include .\\CS264\Assignment2\path.puml
+!include .\\CS264\Assignment2\pline.puml
+!include .\\CS264\Assignment2\poly.puml
+!include .\\CS264\Assignment2\Program.puml
+!include .\\CS264\Assignment2\rect.puml
+!include .\\CS264\Assignment3\caretaker.puml
+!include .\\CS264\Assignment3\circ.puml
+!include .\\CS264\Assignment3\elli.puml
+!include .\\CS264\Assignment3\line.puml
+!include .\\CS264\Assignment3\memento.puml
+!include .\\CS264\Assignment3\path.puml
+!include .\\CS264\Assignment3\pline.puml
+!include .\\CS264\Assignment3\poly.puml
+!include .\\CS264\Assignment3\Program.puml
+!include .\\CS264\Assignment3\rect.puml
+!include .\\CS264\Assignment4\circ.puml
+!include .\\CS264\Assignment4\commandInt.puml
+!include .\\CS264\Assignment4\elli.puml
+!include .\\CS264\Assignment4\line.puml
+!include .\\CS264\Assignment4\path.puml
+!include .\\CS264\Assignment4\pline.puml
+!include .\\CS264\Assignment4\poly.puml
+!include .\\CS264\Assignment4\Program.puml
+!include .\\CS264\Assignment4\rect.puml
+!include .\\CS264\Assignment5\Assignment5_2\circ.puml
+!include .\\CS264\Assignment5\Assignment5_2\createSVG.puml
+!include .\\CS264\Assignment5\Assignment5_2\elli.puml
+!include .\\CS264\Assignment5\Assignment5_2\factory.puml
+!include .\\CS264\Assignment5\Assignment5_2\line.puml
+!include .\\CS264\Assignment5\Assignment5_2\path.puml
+!include .\\CS264\Assignment5\Assignment5_2\pline.puml
+!include .\\CS264\Assignment5\Assignment5_2\poly.puml
+!include .\\CS264\Assignment5\Assignment5_2\Program.puml
+!include .\\CS264\Assignment5\Assignment5_2\rect.puml
+!include .\\CS264\Assignment5\Assignment5_3\caretaker.puml
+!include .\\CS264\Assignment5\Assignment5_3\circ.puml
+!include .\\CS264\Assignment5\Assignment5_3\elli.puml
+!include .\\CS264\Assignment5\Assignment5_3\factory.puml
+!include .\\CS264\Assignment5\Assignment5_3\line.puml
+!include .\\CS264\Assignment5\Assignment5_3\memento.puml
+!include .\\CS264\Assignment5\Assignment5_3\path.puml
+!include .\\CS264\Assignment5\Assignment5_3\pline.puml
+!include .\\CS264\Assignment5\Assignment5_3\poly.puml
+!include .\\CS264\Assignment5\Assignment5_3\Program.puml
+!include .\\CS264\Assignment5\Assignment5_3\rect.puml
+!include .\\CS264\Assignment5\Assignment5_4\circ.puml
+!include .\\CS264\Assignment5\Assignment5_4\commandInt.puml
+!include .\\CS264\Assignment5\Assignment5_4\elli.puml
+!include .\\CS264\Assignment5\Assignment5_4\factory.puml
+!include .\\CS264\Assignment5\Assignment5_4\line.puml
+!include .\\CS264\Assignment5\Assignment5_4\path.puml
+!include .\\CS264\Assignment5\Assignment5_4\pline.puml
+!include .\\CS264\Assignment5\Assignment5_4\poly.puml
+!include .\\CS264\Assignment5\Assignment5_4\Program.puml
+!include .\\CS264\Assignment5\Assignment5_4\rect.puml
+!include .\\CS264\Coding Assignment\Command\brow.puml
+!include .\\CS264\Coding Assignment\Command\commandInt.puml
+!include .\\CS264\Coding Assignment\Command\eye.puml
+!include .\\CS264\Coding Assignment\Command\mouth.puml
+!include .\\CS264\Coding Assignment\Command\Program.puml
+!include .\\CS264\Coding Assignment\Memento\brow.puml
+!include .\\CS264\Coding Assignment\Memento\caretaker.puml
+!include .\\CS264\Coding Assignment\Memento\eye.puml
+!include .\\CS264\Coding Assignment\Memento\memento.puml
+!include .\\CS264\Coding Assignment\Memento\mouth.puml
+!include .\\CS264\Coding Assignment\Memento\Program.puml
+!include .\\CS264\Assignment1\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment1\obj\Debug\net6.0\Assignment1.AssemblyInfo.puml
+!include .\\CS264\Assignment1\obj\Debug\net6.0\Assignment1.GlobalUsings.g.puml
+!include .\\CS264\Assignment2\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment2\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
+!include .\\CS264\Assignment2\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml
+!include .\\CS264\Assignment3\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment3\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
+!include .\\CS264\Assignment3\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml
+!include .\\CS264\Assignment3\obj\Debug\net6.0\Assignment3.AssemblyInfo.puml
+!include .\\CS264\Assignment3\obj\Debug\net6.0\Assignment3.GlobalUsings.g.puml
+!include .\\CS264\Assignment4\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment4\obj\Debug\net6.0\Assignment4.AssemblyInfo.puml
+!include .\\CS264\Assignment4\obj\Debug\net6.0\Assignment4.GlobalUsings.g.puml
+!include .\\CS264\Assignment5\Assignment5_2\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment5\Assignment5_2\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
+!include .\\CS264\Assignment5\Assignment5_2\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml
+!include .\\CS264\Assignment5\Assignment5_3\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment5\Assignment5_3\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
+!include .\\CS264\Assignment5\Assignment5_3\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml
+!include .\\CS264\Assignment5\Assignment5_3\obj\Debug\net6.0\Assignment3.AssemblyInfo.puml
+!include .\\CS264\Assignment5\Assignment5_3\obj\Debug\net6.0\Assignment3.GlobalUsings.g.puml
+!include .\\CS264\Assignment5\Assignment5_4\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Assignment5\Assignment5_4\obj\Debug\net6.0\Assignment5.AssemblyInfo.puml
+!include .\\CS264\Assignment5\Assignment5_4\obj\Debug\net6.0\Assignment5.GlobalUsings.g.puml
+!include .\\CS264\Coding Assignment\Command\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Coding Assignment\Command\obj\Debug\net6.0\Assignment1.AssemblyInfo.puml
+!include .\\CS264\Coding Assignment\Command\obj\Debug\net6.0\Assignment1.GlobalUsings.g.puml
+!include .\\CS264\Coding Assignment\Command\obj\Debug\net6.0\Assignment4.AssemblyInfo.puml
+!include .\\CS264\Coding Assignment\Command\obj\Debug\net6.0\Assignment4.GlobalUsings.g.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\Assignment1.AssemblyInfo.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\Assignment1.GlobalUsings.g.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\Assignment2.AssemblyInfo.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\Assignment2.GlobalUsings.g.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\Assignment3.AssemblyInfo.puml
+!include .\\CS264\Coding Assignment\Memento\obj\Debug\net6.0\Assignment3.GlobalUsings.g.puml
 @enduml

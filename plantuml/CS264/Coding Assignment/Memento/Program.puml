@@ -1,0 +1,10 @@
+@startuml
+class MementoAssignment {
+    + {static} Main(args:String[]) : void
+}
+class "List`1"<T> {
+}
+MementoAssignment o-> "caretaker" Caretaker
+MementoAssignment o-> "redoList<string>" "List`1"
+MementoAssignment o-> "commands<string>" "List`1"
+@enduml

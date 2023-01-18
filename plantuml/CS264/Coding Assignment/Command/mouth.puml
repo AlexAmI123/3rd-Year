@@ -1,0 +1,12 @@
+@startuml
+class Mouth {
+    + x1 : int
+    + y1 : int
+    + x2 : int
+    + y2 : int
+    + stroke : string
+    + strokeWidth : string
+    + Mouth(x1:int, y1:int, x2:int, y2:int, stroke:string, strokeWidth:string)
+    + printShape() : string
+}
+@enduml

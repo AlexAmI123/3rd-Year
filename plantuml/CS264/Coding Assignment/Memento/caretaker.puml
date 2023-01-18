@@ -1,0 +1,20 @@
+@startuml
+class Caretaker {
+    + addMemento(shape:Memento) : void
+    + undo() : void
+    + redo() : void
+    + printMemento() : void
+    + CreateMomentoSVG(name:string) : void
+    + Remove(ind:int) : void
+    + MoveUp(type:string, val:int, ind:int) : void
+    + MoveDown(type:string, val:int, ind:int) : void
+    + MoveLeft(type:string, val:int, ind:int) : void
+    + MoveRight(type:string, val:int, ind:int) : void
+    + Rotate(type:string, dir:string, val:int, ind:int) : void
+    + Style(type:string, val:string, ind:int) : void
+}
+class "List`1"<T> {
+}
+Caretaker o-> "history<Memento>" "List`1"
+Caretaker o-> "redoList<Memento>" "List`1"
+@enduml

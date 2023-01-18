@@ -1,0 +1,129 @@
+@startuml
+interface CommandInt {
+    Execute() : void
+}
+class Commands {
+    shape : string
+    + Commands(shape:string)
+    + Execute() : void
+    + Undo() : void
+    + Redo() : void
+    + PrintSVG() : void
+    + CreateSVG() : void
+    + RemoveSVG() : void
+    + MoveUp() : void
+    + MoveDown() : void
+    + MoveLeft() : void
+    + MoveRight() : void
+    + Rotate() : void
+    + <<override>> ToString() : string
+    + Style() : void
+}
+class AddCMD {
+    + shape : string
+    + AddCMD(shape:String, history:List<string>)
+    + Execute() : void
+}
+class UndoCMD {
+    + UndoCMD(history:List<string>, redoList:List<string>)
+    + Execute() : void
+}
+class RedoCMD {
+    + RedoCMD(history:List<string>, redoList:List<string>)
+    + Execute() : void
+}
+class PrintSVGCMD {
+    + PrintSVGCMD(history:List<string>)
+    + Execute() : void
+}
+class CreateSVGCMD {
+    + CreateSVGCMD(history:List<string>, name:string)
+    + Execute() : void
+}
+class RemoveCMD {
+    + ind : int
+    + RemoveCMD(history:List<string>, redoList:List<string>, ind:int)
+    + Execute() : void
+}
+class MoveUp {
+    + ind : int
+    + val : int
+    + type : string
+    + MoveUp(history:List<string>, redoList:List<string>, type:string, val:int, ind:int)
+    + Execute() : void
+}
+class MoveDown {
+    + ind : int
+    + val : int
+    + type : string
+    + MoveDown(history:List<string>, redoList:List<string>, type:string, val:int, ind:int)
+    + Execute() : void
+}
+class MoveLeft {
+    + ind : int
+    + val : int
+    + type : string
+    + MoveLeft(history:List<string>, redoList:List<string>, type:string, val:int, ind:int)
+    + Execute() : void
+}
+class MoveRight {
+    + ind : int
+    + val : int
+    + type : string
+    + MoveRight(history:List<string>, redoList:List<string>, type:string, val:int, ind:int)
+    + Execute() : void
+}
+class Rotate {
+    + type : string
+    + dir : string
+    + ind : int
+    + val : int
+    + Rotate(history:List<string>, redoList:List<string>, type:string, dir:string, val:int, ind:int)
+    + Execute() : void
+}
+class Style {
+    + type : string
+    + val : string
+    + ind : int
+    + Style(history:List<string>, redoList:List<string>, type:string, val:string, ind:int)
+    + Execute() : void
+}
+class "List`1"<T> {
+}
+CommandInt <|-- Commands
+CommandInt <|-- AddCMD
+AddCMD --> "history<String>" "List`1"
+AddCMD --> "redoList<String>" "List`1"
+CommandInt <|-- UndoCMD
+UndoCMD --> "history<String>" "List`1"
+UndoCMD --> "redoList<String>" "List`1"
+CommandInt <|-- RedoCMD
+RedoCMD --> "history<String>" "List`1"
+RedoCMD --> "redoList<String>" "List`1"
+CommandInt <|-- PrintSVGCMD
+PrintSVGCMD --> "history<String>" "List`1"
+CommandInt <|-- CreateSVGCMD
+CreateSVGCMD --> "history<String>" "List`1"
+CreateSVGCMD --> "name" String
+CommandInt <|-- RemoveCMD
+RemoveCMD --> "history<String>" "List`1"
+RemoveCMD --> "redoList<String>" "List`1"
+CommandInt <|-- MoveUp
+MoveUp --> "history<String>" "List`1"
+MoveUp --> "redoList<String>" "List`1"
+CommandInt <|-- MoveDown
+MoveDown --> "history<String>" "List`1"
+MoveDown --> "redoList<String>" "List`1"
+CommandInt <|-- MoveLeft
+MoveLeft --> "history<String>" "List`1"
+MoveLeft --> "redoList<String>" "List`1"
+CommandInt <|-- MoveRight
+MoveRight --> "history<String>" "List`1"
+MoveRight --> "redoList<String>" "List`1"
+CommandInt <|-- Rotate
+Rotate --> "history<String>" "List`1"
+Rotate --> "redoList<String>" "List`1"
+CommandInt <|-- Style
+Style --> "history<String>" "List`1"
+Style --> "redoList<String>" "List`1"
+@enduml

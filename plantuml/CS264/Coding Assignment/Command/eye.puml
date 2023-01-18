@@ -1,0 +1,12 @@
+@startuml
+class Eye {
+    + cx : int
+    + cy : int
+    + r : int
+    + fill : string
+    + stroke : string
+    + strokeWidth : string
+    + Eye(cx:int, cy:int, r:int, fill:string, stroke:string, strokeWidth:string)
+    + printShape() : String
+}
+@enduml
