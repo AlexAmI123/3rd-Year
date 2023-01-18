@@ -6,9 +6,6 @@ Version 1.0.0
 
 /*
 REFERENCES:
-https://www.newthinktank.com/2012/09/command-design-pattern-tutorial/
-https://refactoring.guru/design-patterns/command/csharp/example
-John Keating's week 8 demo files for Command Design pattern
 */
 
 using System;
@@ -16,15 +13,13 @@ using System.Linq;
 using System.IO;
 namespace Program
 {
-    class assignment4
+    class assignment1
     {
-        //public static Caretaker caretaker = new Caretaker();
         public static List<string> canvas = new List<string>();
         public static List<string> redoList = new List<string>();
         public static void Main(String[]args)
         {
             //Declaring all variables
-            //List<string> canvas = new List<string>();
             string cmdLine,coords,fill,stroke,strokeWidth;
             int x,y,width,height,r,cx,cy,rx,ry,x1,y1,x2,y2,z,n;
             bool exit = false;
