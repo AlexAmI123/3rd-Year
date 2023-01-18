@@ -44,8 +44,8 @@ namespace Program
                 //print info about program
                 Console.WriteLine(@"
                 add	     { left-eye | right-eye	| left-brow	| right-brow | mouth }
-	            remove	 { left-eye | right-eye	| left-brow	| right-brow | mouth }
-	            move	 { left-eye | right-eye	| left-brow	| right-brow | mouth } { up | down	| left | right }	value
+	        remove	 { left-eye | right-eye	| left-brow	| right-brow | mouth }
+	        move	 { left-eye | right-eye	| left-brow	| right-brow | mouth } { up | down	| left | right }	value
                 rotate	 { left-eye | right-eye	| left-brow	| right-brow | mouth } { clockwise | anticlockwise } degrees
                 style	 { left-eye | right-eye | left-brow | right-brow | mouth } { A | B | C }
                 save	 { <file> }
@@ -64,52 +64,76 @@ namespace Program
                 string[] cmdCont = cmdLine.Split(" ");
                 
                 //switch statements on what to do when certain input is made
-                for(int j = 0; j < cmdCont.Length; j++)
+                switch(cmdCont[0])
                 {
-                    switch(cmdCont[j])
-                    {
-                        case "add":
-                            if(cmdCont[2] == "{ left-eye }")
-                            String canvasEnd1 = "</svg>";
+                    case "add":
+                        if(cmdCont[2].Equals("left-eye"))
+                        {
+                            String canvasEnd1 = "xyz";
                             AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
-                            break;
-                        case "remove":
-                            break;
-                        case "move":
-                            break;
-                        case "rotate":
-                            break;
-                        case "style":
-                            break;
-                        case "save":
-                            break;
-                        case "draw":
-                            break;
-                        case "undo":
-                            UndoCMD undo = new UndoCMD(canvas, redoList);
-                            undo.Execute();
-                            break;
-                        case "redo":
-                            RedoCMD redo = new RedoCMD(canvas, redoList);
-                            redo.Execute();
-                            break; 
-                        case "help":
-                            Console.WriteLine(@"
-                add	     {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}
-	            remove	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}
-	            move	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}	{up	|	down	|	left	|	right	}	value
-                rotate	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}	{	clockwise	|	anticlockwise	}	degrees
-                style	 {left-eye|right-eye|left-brow|right-brow|mouth} {A|B|C}
-                save	 {<file>}
-                draw
-                undo
-                redo
-                help
-                quit
-                ");break;
-                        case "quit":
-                            quit = true;break;
-                    }
+                            addEnd1.Execute();
+                        }
+                        else if(cmdCont[2].Equals("right-eye"))
+                        {
+                            String canvasEnd1 = "xyz";
+                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
+                            addEnd1.Execute();
+                        }
+                        else if(cmdCont[2].Equals("left-brow"))
+                        {
+                            String canvasEnd1 = "xyz";
+                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
+                            addEnd1.Execute();
+                        }
+                        else if(cmdCont[2].Equals("right-brow"))
+                        {
+                            String canvasEnd1 = "xyz";
+                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
+                            addEnd1.Execute();
+                        }
+                        else if(cmdCont[2].Equals("mouth"))
+                        {
+                            String canvasEnd1 = "xyz";
+                            AddCMD addEnd1 = new AddCMD(canvasEnd1, canvas);
+                            addEnd1.Execute();
+                        }
+                        break;
+                    case "remove":
+                        break;
+                    case "move":
+                        break;
+                    case "rotate":
+                        break;
+                    case "style":
+                        break;
+                    case "save":
+                        break;
+                    case "draw":
+                        break;
+                    case "undo":
+                        UndoCMD undo = new UndoCMD(canvas, redoList);
+                        undo.Execute();
+                        break;
+                    case "redo":
+                        RedoCMD redo = new RedoCMD(canvas, redoList);
+                        redo.Execute();
+                        break; 
+                    case "help":
+                        Console.WriteLine(@"
+            add	     {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}
+            remove	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}
+            move	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}	{up	|	down	|	left	|	right	}	value
+            rotate	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}	{	clockwise	|	anticlockwise	}	degrees
+            style	 {left-eye|right-eye|left-brow|right-brow|mouth} {A|B|C}
+            save	 {<file>}
+            draw
+            undo
+            redo
+            help
+            quit
+            ");break;
+                    case "quit":
+                        quit = true;break;
                 }
             }while (quit != true);
             //ending the canvas list
