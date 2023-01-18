@@ -32,29 +32,9 @@ namespace Program
             //Getting input in a do while loop
             do
             {
-                //printing the svg preview
-                PrintSVGCMD cmdDisp = new PrintSVGCMD(canvas);
-                cmdDisp.Execute();
-                Console.WriteLine("</svg>");
-
-                //add space within the console to make it cleaner
-                Console.WriteLine();
-                Console.WriteLine();
                 
-                //print info about program
-                Console.WriteLine(@"
-                add	     { left-eye | right-eye	| left-brow	| right-brow | mouth }
-	        remove	 { left-eye | right-eye	| left-brow	| right-brow | mouth }
-	        move	 { left-eye | right-eye	| left-brow	| right-brow | mouth } { up | down	| left | right }	value
-                rotate	 { left-eye | right-eye	| left-brow	| right-brow | mouth } { clockwise | anticlockwise } degrees
-                style	 { left-eye | right-eye | left-brow | right-brow | mouth } { A | B | C }
-                save	 { <file> }
-                draw
-                undo
-                redo
-                help
-                quit
-                ");
+                
+               
 
 
                 //read in next line
@@ -109,6 +89,16 @@ namespace Program
                     case "save":
                         break;
                     case "draw":
+                        //clearing console
+                        Console.Clear();
+                        //printing the svg preview
+                        PrintSVGCMD cmdDisp = new PrintSVGCMD(canvas);
+                        cmdDisp.Execute();
+                        Console.WriteLine("</svg>");
+
+                        //add space within the console to make it cleaner
+                        Console.WriteLine();
+                        Console.WriteLine();
                         break;
                     case "undo":
                         UndoCMD undo = new UndoCMD(canvas, redoList);
@@ -119,19 +109,22 @@ namespace Program
                         redo.Execute();
                         break; 
                     case "help":
-                        Console.WriteLine(@"
-            add	     {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}
-            remove	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}
-            move	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}	{up	|	down	|	left	|	right	}	value
-            rotate	 {	left-eye	|		right-eye	|	left-brow	|	right-brow	|	mouth	}	{	clockwise	|	anticlockwise	}	degrees
-            style	 {left-eye|right-eye|left-brow|right-brow|mouth} {A|B|C}
-            save	 {<file>}
-            draw
-            undo
-            redo
-            help
-            quit
-            ");break;
+                        //clearing console
+                        Console.Clear();
+                        //print info about program
+                Console.WriteLine(@"
+                add	     { left-eye | right-eye | left-brow | right-brow | mouth }
+                remove	 { left-eye | right-eye	| left-brow | right-brow | mouth }
+                move	 { left-eye | right-eye	| left-brow | right-brow | mouth } { up | down | left | right } value
+                rotate	 { left-eye | right-eye	| left-brow | right-brow | mouth } { clockwise | anticlockwise } degrees
+                style	 { left-eye | right-eye | left-brow | right-brow | mouth } { A | B | C }
+                save	 { <file> }
+                draw
+                undo
+                redo
+                help
+                quit
+                ");break;
                     case "quit":
                         quit = true;break;
                 }
